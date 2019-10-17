@@ -1,0 +1,15 @@
+name: Constructive Programming
+description: Constructivism Extends into the Realm of Software Development
+url: https://www.constructive.dev/
+
+title: Constructive Programming
+avatar: assets/img/avatar.png
+favicon: assets/img/favicon.ico
+
+header_text: Write Code that is "Correct by Construction"
+footer_text: Copyright 2019
+google_analytics: UA-150317765-1
+
+# BUILD SETTINGS
+remote_theme: sylhare/Type-on-Strap
+plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed]

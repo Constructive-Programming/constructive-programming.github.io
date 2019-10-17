@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <div id="main" class="call-out"
+       style="background-image: url('{{ site.header_feature_image | relative_url }}')">
+    <h1> {{ site.header_text | default: "Change <code>header_text</code> in <code>_config.yml</code>"}} </h1>
+  </div>
+
+  <div id="presentations"
+      <div class="card" >
+          <div class="card-body">
+              <h5 class="card-title" >Correct by Construction</h5>
+              <p class="card-text" >First presentation attempting to explain the motivations behind Constructive Programing</p>
+              <a href="https://slides.com/rodolfohansen/correct-by-construction/fullscreen" class="btn btn-primary" >Slides.com link</a>
+          </div>
+      </div>
+  </div>
+
+  {% include blog.html %}
+
+</div>
