@@ -1,5 +1,6 @@
 ---
 layout: default
+bootstrap: true
 ---
 
 <div class="home">
@@ -9,12 +10,13 @@ layout: default
     <h1> {{ site.header_text | default: "Change <code>header_text</code> in <code>_config.yml</code>"}} </h1>
   </div>
 
-  <div id="presentations"
-      <div class="card" >
+  <div id="presentations" class="bootstrap-iso" >
+      <div class="card mx-auto mt-3" style="width: 18rem; height: 24rem;">
+          <div class="card-img-top w-75 mx-auto overflow-hidden"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Rieger-Nishimura_ladder.svg" class="mx-auto d-block" alt="image cap" /></div>
           <div class="card-body">
               <h5 class="card-title" >Correct by Construction</h5>
-              <p class="card-text" >First presentation attempting to explain the motivations behind Constructive Programing</p>
-              <a href="https://slides.com/rodolfohansen/correct-by-construction/fullscreen" class="btn btn-primary" >Slides.com link</a>
+              <p class="card-text" ><small>First presentation attempting to explain the motivations behind Constructive Programing</small></p>
+              <a href="https://slides.com/rodolfohansen/correct-by-construction/fullscreen" class="btn btn-primary" target="_blank">Slides.com link</a>
           </div>
       </div>
   </div>

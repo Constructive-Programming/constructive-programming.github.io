@@ -12,4 +12,4 @@ google_analytics: UA-150317765-1
 
 # BUILD SETTINGS
 remote_theme: sylhare/Type-on-Strap
-plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed]
+plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed, jekyll-remote-theme]
