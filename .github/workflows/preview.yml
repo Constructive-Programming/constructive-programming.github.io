@@ -1,0 +1,40 @@
+name: PR preview
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Serialize against build.yml so we never race on the gh-pages branch.
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - if: github.event.action != 'closed'
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - if: github.event.action != 'closed'
+        name: Build site with preview baseurl
+        run: bundle exec jekyll build --baseurl "/pr-preview/pr-${{ github.event.number }}"
+        # No JEKYLL_ENV=production so previews don't fire Disqus / analytics.
+
+      - name: Deploy or remove preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./_site
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
