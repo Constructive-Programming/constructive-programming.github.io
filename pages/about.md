@@ -107,6 +107,7 @@ workshops/training shapes — see the [home page]({{ '/' | relative_url }}#consu
 for the engagement bullets. We are available for select engagements;
 based in the Netherlands; comfortable with EU MSAs and standard NDAs.
 
-The fastest path is
-[booking a 30-minute scoping call](https://cal.constructive.dev/constructive)
-or emailing [consulting@constructive.dev](mailto:consulting@constructive.dev).
+Email [consulting@constructive.dev](mailto:consulting@constructive.dev?subject=Scoping%20call)
+and we'll set up a 30-minute scoping call. Calendar booking is being set up at
+[cal.constructive.dev](https://cal.constructive.dev/); once it's live we'll
+swap the email step for a direct booking link.
