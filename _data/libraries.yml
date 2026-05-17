@@ -2,6 +2,7 @@
 
 - slug: eo
   name: "cats-eo"
+  featured: true
   tagline: "Existential optics for Scala 3, built on cats."
   description: >
     One Optic[S, T, A, B, F] trait unifies Lens, Prism, Optional,
@@ -27,6 +28,7 @@
 
 - slug: cardinality
   name: "scala-cardinality"
+  featured: true
   tagline: "Counting type inhabitants — keep your types small."
   description: >
     A type-cardinality calculator for Scala ADTs (|T| over +, *, ^),

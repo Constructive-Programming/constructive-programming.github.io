@@ -1,10 +1,16 @@
 {% comment %}
   Library grid. Source: _data/libraries.yml.
+  Pass `featured=true` to limit to entries with `featured: true`.
 {% endcomment %}
+
+{% assign libs = site.data.libraries %}
+{% if include.featured %}
+  {% assign libs = libs | where: "featured", true %}
+{% endif %}
 
 <div class="libraries bootstrap-iso">
   <div class="row justify-content-center">
-    {% for library in site.data.libraries %}
+    {% for library in libs %}
       <div class="col-md-6 col-lg-4 d-flex">
         <div class="card mt-3 flex-fill" style="min-height: 22rem;">
           <div class="card-body d-flex flex-column">
