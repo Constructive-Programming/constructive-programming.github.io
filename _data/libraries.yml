@@ -13,7 +13,7 @@
   stack: "Scala 3 + cats"
   status: "Active — v0.1.0 (2026)"
   repo: "https://github.com/Constructive-Programming/eo"
-  docs: "https://github.com/Constructive-Programming/eo#readme"
+  docs: "https://eo.constructive.dev/"
 
 - slug: surreals
   name: "surreals"
