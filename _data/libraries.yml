@@ -1,0 +1,37 @@
+# Libraries listed on the home page and /libraries/ page.
+
+- slug: eo
+  name: "cats-eo"
+  tagline: "Existential optics for Scala 3, built on cats."
+  description: >
+    One Optic[S, T, A, B, F] trait unifies Lens, Prism, Optional,
+    Traversal, Grate, AlgLens and Kaleidoscope. Discipline-checked
+    laws, scoverage-driven quality, JMH benchmarks against Monocle,
+    and circe + avro integrations with an observable-by-default Ior
+    failure surface.
+  stack: "Scala 3 + cats"
+  status: "Active — v0.1.0 (2026)"
+  repo: "https://github.com/Constructive-Programming/eo"
+  docs: "https://github.com/Constructive-Programming/eo#readme"
+
+- slug: surreals
+  name: "surreals"
+  tagline: "Conway's surreal numbers as a cats-algebra Field."
+  description: >
+    A small Scala 3 exploration of surreal numbers, encoded with
+    droste recursion schemes (Fix[SurrealStructure]) and memoised
+    with scaffeine. Discipline laws under test.
+  stack: "Scala 3 + cats algebra + droste"
+  status: "Experimental"
+  repo: "https://github.com/Constructive-Programming/surreals"
+
+- slug: cardinality
+  name: "scala-cardinality"
+  tagline: "Counting type inhabitants — keep your types small."
+  description: >
+    A type-cardinality calculator for Scala ADTs (|T| over +, *, ^),
+    plus a scalafix rule that flags sum types used as function
+    arguments. Backs the "Keep Your Types Small" argument with code.
+  stack: "Scala + scalafix"
+  status: "Dormant (2022)"
+  repo: "https://github.com/Constructive-Programming/scala-cardinality"
