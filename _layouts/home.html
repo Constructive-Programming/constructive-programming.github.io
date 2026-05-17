@@ -9,16 +9,8 @@ bootstrap: true
        style="background-image: url('{{ site.header_feature_image | relative_url }}')">
     <h1> {{ site.header_text | default: "Change <code>header_text</code> in <code>_config.yml</code>"}} </h1>
     <p class="lead mt-3">
-      Open-source libraries and consulting for software that is
+      Consulting and open-source libraries for software that is
       <em>correct by construction</em> — referential, total, terminating.
-    </p>
-  </div>
-
-  <div id="libraries" class="container">
-    <h2 class="text-center mt-5 mb-3">Libraries</h2>
-    {% include libraries.html %}
-    <p class="text-center mt-4 mb-5">
-      <a href="{{ '/libraries/' | relative_url }}" class="btn btn-outline-primary">All libraries →</a>
     </p>
   </div>
 
@@ -33,27 +25,37 @@ bootstrap: true
           I'm <strong>Rodolfo Hansen</strong> — author of
           <a href="https://github.com/Constructive-Programming/eo">cats-eo</a>,
           designer of the <a href="https://github.com/Constructive-Programming/fixed">Fixed</a>
-          language, and the speaker behind
-          <a href="https://slides.com/rodolfohansen/keep-your-types-small">Keep Your Types Small</a>
-          and
-          <a href="https://slides.com/rodolfohansen/correct-by-construction">Correct by Construction</a>.
-          I work primarily in Scala and Rust, with deep experience in typed functional
-          design, optics, algebraic effects, and recursion schemes.
+          language, and the writer behind a running series on type-driven design
+          at <a href="https://rodolfohansen.medium.com/" target="_blank" rel="noopener">rodolfohansen.medium.com</a> —
+          on total program cardinality, the cost dynamic types accumulate as a
+          codebase grows, dependent and refinement types in mainstream
+          languages, the case for using more optics, and where functional
+          architecture stops earning its complexity.
+        </p>
+
+        <p>
+          I work primarily in Scala and Rust. The thread that runs through every
+          codebase I touch is <em>narrowing</em>: shrinking the set of values a
+          type can hold so that fewer wrong programs compile. That instinct
+          shapes how I review code, model data, and move teams toward typed
+          functional idioms without rewriting the world.
         </p>
 
         <p>Engagements I take on:</p>
         <ul>
           <li><strong>IC contributions</strong> — ship features in Scala or Rust
             alongside your existing engineering team.</li>
-          <li><strong>Architecture and advisory</strong> — review designs, narrow
-            type signatures, and identify where capability-based abstractions or
-            algebraic effects unlock simpler, safer code.</li>
+          <li><strong>Architecture and advisory</strong> — review designs through
+            a cardinality lens, narrow type signatures, identify where
+            capability-based abstractions, refinement types, or algebraic
+            effects unlock simpler and safer code.</li>
           <li><strong>Optics, effects and recursion deep dives</strong> — bring
             cats-eo, Monocle, droste, or your effect system of choice to bear on
             knotty data-pipeline or state-management problems.</li>
           <li><strong>Workshops and training</strong> — adapted from the
             <a href="https://github.com/Constructive-Programming/workshops">constructive programming workshops</a>
-            (logic, ADTs, streaming) for your team's stack and seniority.</li>
+            and the <a href="https://rodolfohansen.medium.com/" target="_blank" rel="noopener">Medium series</a>,
+            for your team's stack and seniority.</li>
         </ul>
 
         <p>
@@ -67,9 +69,22 @@ bootstrap: true
              target="_blank" rel="noopener">
             Get in touch on LinkedIn
           </a>
+          <a href="https://rodolfohansen.medium.com/"
+             class="btn btn-outline-secondary ml-2"
+             target="_blank" rel="noopener">
+            Read on Medium
+          </a>
         </p>
       </div>
     </div>
+  </div>
+
+  <div id="libraries" class="container">
+    <h2 class="text-center mt-5 mb-3">Libraries</h2>
+    {% include libraries.html featured=true %}
+    <p class="text-center mt-4 mb-5">
+      <a href="{{ '/libraries/' | relative_url }}" class="btn btn-outline-primary">All libraries →</a>
+    </p>
   </div>
 
   <div id="articles" class="bootstrap-iso">
