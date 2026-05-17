@@ -37,4 +37,7 @@ jobs:
           source-dir: ./_site
           preview-branch: gh-pages
           umbrella-dir: pr-preview
+          # Use the CNAME'd domain so the comment doesn't point at the
+          # *.github.io URL, which GitHub Pages 301s away from this repo.
+          custom-url: www.constructive.dev
           action: auto
