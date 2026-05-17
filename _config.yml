@@ -1,18 +1,23 @@
 name: Constructive Programming
-description: Constructivism Extends into the Realm of Software Development
+description: Type-driven and LLM-augmented engineering consultancy
 url: https://www.constructive.dev/
 
 title: Constructive Programming
-avatar: assets/img/avatar.png
 favicon: assets/img/favicon.ico
 
-header_feature_image: " "
-header_text: Write Code that is "Correct by Construction"
-footer_text: "Copyright Rodolfo Hansen,"
-google_analytics: UA-150317765-1
+# Hero
+header_feature_image: ""
+header_text: Constructive Programming
+header_subtitle: Type-driven engineering &amp; LLM-augmented delivery for teams that can't afford regressions.
+
+# Footer
+footer_text: "Copyright Constructive Programming,"
+
+# Analytics: switch to Plausible (or remove) when we have a host;
+# UA was sunset July 2023 so we no longer emit a measurement id.
+# google_analytics:
 
 # BUILD SETTINGS
 katex: true
 remote_theme: sylhare/Type-on-Strap
-disqus_shortname: constructive
 plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed, jekyll-remote-theme]

@@ -1,0 +1,7 @@
+# Icons rendered in the footer. Theme reads site.data.icons.
+# We override the upstream defaults explicitly so the GitHub icon
+# does not point at the theme author's account.
+github: Constructive-Programming
+linkedin: rodolfohansen
+medium: rodolfohansen.medium.com
+mail: consulting@constructive.dev

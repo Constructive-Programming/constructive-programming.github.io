@@ -1,0 +1,22 @@
+# Recent Medium posts to surface on the home Writing section.
+# Order is preserved.
+
+- title: "The ONE fp Design Pattern"
+  blurb: "How functional programmers actually approach software architecture — under the misconceptions."
+  url: "https://rodolfohansen.medium.com/the-one-fp-design-pattern-4498498cef64"
+  date: "2024-09-06"
+
+- title: "The Unanticipated Powers of Total Program Cardinality"
+  blurb: "A new code-quality metric grounded in counting the inhabitants of a program's types."
+  url: "https://rodolfohansen.medium.com/the-hidden-powers-of-total-program-cardinality-9351ba774d4d"
+  date: "2024-01-16"
+
+- title: "The most common mistake we make as Systems Thinkers"
+  blurb: "The reification fallacy and the problematic abstractions it produces."
+  url: "https://rodolfohansen.medium.com/the-most-common-mistake-we-make-as-systems-thinkers-29601ddd4747"
+  date: "2023-11-24"
+
+- title: "Poor man's Pi (types)"
+  blurb: "Practical dependent typing in mainstream languages, without a specialised compiler."
+  url: "https://levelup.gitconnected.com/poor-mans-pi-types-a6c8594eb15d"
+  date: "2023-03-15"
