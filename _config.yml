@@ -6,10 +6,13 @@ title: Constructive Programming
 avatar: assets/img/avatar.png
 favicon: assets/img/favicon.ico
 
+header_feature_image: " "
 header_text: Write Code that is "Correct by Construction"
 footer_text: Copyright 2019
 google_analytics: UA-150317765-1
 
 # BUILD SETTINGS
+katex: true
 remote_theme: sylhare/Type-on-Strap
+disqus_shortname: constructive
 plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed, jekyll-remote-theme]

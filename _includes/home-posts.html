@@ -1,0 +1,21 @@
+{% for post in paginator.posts %}
+<div class="card mx-auto mt-3" style="width: 18rem; height: 24rem;">
+    {% if post.thumbnail %}
+    <div class="card-img-top w-75 mx-auto overflow-hidden">
+        <a class="mx-auto d-block" aria-label="{{ post.title }}" href="{{ post.url | relative_url }}">
+            <img alt="{{ post.title }}" src="{{ post.thumbnail | relative_url }}">
+        </a>
+    </div>
+    {% endif %}
+    <div class="card-body">
+            <h5 class="card-title">
+                <a aria-label="{{ post.title }}" class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h5>
+        <p class="clard-text"><small>
+            {{ post.content | strip_html | truncate: '250' | escape }}
+        </small >
+        </p>
+    </span>
+    </div>
+</div>
+{% endfor %}
