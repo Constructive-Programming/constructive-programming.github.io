@@ -34,13 +34,14 @@ Gem::Specification.new do |spec|
                                     ----------------------------------------------------------
                                   MSG
 
-  spec.required_ruby_version   = '>= 2.4.0'
+  spec.required_ruby_version   = '>= 2.7.0'
 
   spec.add_runtime_dependency "jekyll", ">= 3.5", "< 5.0"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.9"
   spec.add_runtime_dependency "jekyll-paginate", "~> 1.1"
   spec.add_runtime_dependency "jekyll-seo-tag", "~>2.6"
 
-  spec.add_development_dependency "bundler", ">= 2.0", "< 2.1.0"
+  spec.add_development_dependency "bundler", ">= 2.0"
   spec.add_development_dependency "jekyll-remote-theme"
+  spec.add_development_dependency "webrick", "~> 1.7"
 end
