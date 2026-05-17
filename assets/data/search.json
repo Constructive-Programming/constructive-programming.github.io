@@ -1,0 +1,63 @@
+[
+  
+    {
+      "title"    : "Refactorings",
+      "category" : "",
+      "tags"     : "refactoring, tools",
+      "url"      : "/2019/10/18/Refactorings.html",
+      "date"     : "2019-10-18 00:00:00 +0000"
+    },
+  
+  
+  
+  {
+      "title"    : "About",
+      "subtitle"    : "What is Constructive Programming all About?",
+      "category" : "",
+      "tags"     : "about",
+      "url"      : "/about/"
+  },
+  
+  
+  
+  
+  
+  {
+      "title"    : "Projects",
+      "subtitle"    : "Libraries, a language, and teaching material around constructive programming",
+      "category" : "",
+      "tags"     : "projects",
+      "url"      : "/projects/"
+  },
+  
+  
+  
+  
+  
+  {
+      "title"    : "Search",
+      "subtitle"    : "What are you looking for?",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/search/"
+  },
+  
+  
+  
+  {
+      "title"    : "Tags",
+      "subtitle"    : "",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/tags/"
+  },
+  
+  
+  
+  
+  
+  
+  
+  
+  {}
+]
