@@ -23,11 +23,11 @@
   
   
   {
-      "title"    : "Projects",
-      "subtitle"    : "Libraries, a language, and teaching material around constructive programming",
+      "title"    : "Libraries",
+      "subtitle"    : "Libraries that bring constructive idioms to the Scala ecosystem today",
       "category" : "",
-      "tags"     : "projects",
-      "url"      : "/projects/"
+      "tags"     : "libraries",
+      "url"      : "/libraries/"
   },
   
   
