@@ -1,88 +1,108 @@
 <!DOCTYPE html>
-<!--
-    Type on Strap jekyll theme v2.5.1
-    Theme free for personal and commercial use under the MIT license
-    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
--->
 <html lang="en">
   
-  <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5"> <!-- Theme Mode--> <script> const darkBtn = "Dark"; const lightBtn = "Light"; const isAutoTheme = false; const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; if (isAutoTheme) { document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme') ?? preferredTheme); } else { document.documentElement.setAttribute('data-theme', "light"); } </script> <!-- Main JS (navbar.js, katex_init.js)--> <script defer src="/assets/js/main.min.js"></script> <!-- CSS --> <link rel="stylesheet" href="/assets/css/main.css"> <!--Favicon--> <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon"> <!-- Preconnect to Cusdis for faster loading when comments become visible --> <!-- Bootstrap 4.6.2 CSS CDN --> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> <!-- jQuery 3.5.1 CDN --> <script defer src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> <!-- Popper.js 1.16.1 CDN --> <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> <!-- Bootstrap 4.6.2 JS CDN --> <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbZUBVs2mbGk8cFoTfurqEOk6sD3+6VUuY3" crossorigin="anonymous"></script> <!-- KaTeX 0.16.38 --> <script defer src="/assets/js/vendor/katex.min.js"></script> <script defer src="/assets/js/vendor/katex.auto-render.min.js" onload="renderMathInElement(document.body);"></script> <!-- Mermaid 11.13.0 --> <!-- Simple-Jekyll-Search 2.1.3 --> <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script> <!-- Google Analytics / Cookie Consent --> <script> const cookieName = 'cookie-notice-dismissed-https://www.constructive.dev/'; const isCookieConsent = ''; const analyticsName = 'UA-150317765-1'; const analyticsNameGA4 = ''; </script> <!-- Global site tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150317765-1"></script> <!-- seo tags --> <meta property="og:image" content="https://www.constructive.dev// "> <meta property="og:type" content="website" /> <!-- Begin Jekyll SEO tag v2.9.0 --> <title>Constructive Programming | Constructivism Extends into the Realm of Software Development</title> <meta name="generator" content="Jekyll v4.4.1" /> <meta property="og:title" content="Constructive Programming" /> <meta property="og:locale" content="en_US" /> <meta name="description" content="Constructivism Extends into the Realm of Software Development" /> <meta name="twitter:description" property="og:description" content="Constructivism Extends into the Realm of Software Development" /> <link rel="canonical" href="https://www.constructive.dev//" /> <meta property="og:url" content="https://www.constructive.dev//" /> <meta property="og:site_name" content="Constructive Programming" /> <meta property="og:type" content="website" /> <meta name="twitter:card" content="summary" /> <meta name="twitter:title" content="Constructive Programming" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebSite","description":"Constructivism Extends into the Realm of Software Development","headline":"Constructive Programming","name":"Constructive Programming","url":"https://www.constructive.dev//"}</script> <!-- End Jekyll SEO tag --> <!-- RSS --> <link rel="alternate" type="application/atom+xml" title="Constructive Programming" href="https://www.constructive.dev//feed.xml"/> <link type="application/atom+xml" rel="alternate" href="https://www.constructive.dev//feed.xml" title="Constructive Programming" /> <!-- Twitter Cards --> <meta name="twitter:title" content="Constructive Programming"> <meta name="twitter:description" content="Write Code that is "Correct by Construction""> <meta name="twitter:card" content="summary"> <meta name="twitter:image" content="https://www.constructive.dev// "> <meta name="twitter:image:alt" content="Constructive Programming"> </head>
+  <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5"> <!-- Theme Mode--> <script> const darkBtn = "Dark"; const lightBtn = "Light"; const isAutoTheme = false; const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; if (isAutoTheme) { document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme') ?? preferredTheme); } else { document.documentElement.setAttribute('data-theme', "light"); } </script> <!-- Main JS (navbar.js, katex_init.js)--> <script defer src="/assets/js/main.min.js"></script> <!-- CSS --> <link rel="stylesheet" href="/assets/css/main.css"> <!--Favicon--> <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon"> <!-- Preconnect to Cusdis for faster loading when comments become visible --> <!-- Bootstrap 4.6.2 CSS CDN --> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> <!-- jQuery 3.5.1 CDN --> <script defer src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> <!-- Popper.js 1.16.1 CDN --> <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script> <!-- Bootstrap 4.6.2 JS CDN --> <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbZUBVs2mbGk8cFoTfurqEOk6sD3+6VUuY3" crossorigin="anonymous"></script> <!-- KaTeX 0.16.38 --> <script defer src="/assets/js/vendor/katex.min.js"></script> <script defer src="/assets/js/vendor/katex.auto-render.min.js" onload="renderMathInElement(document.body);"></script> <!-- Mermaid 11.13.0 --> <!-- Simple-Jekyll-Search 2.1.3 --> <script src="/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script> <!-- Google Analytics / Cookie Consent --> <script> const cookieName = 'cookie-notice-dismissed-https://www.constructive.dev/'; const isCookieConsent = ''; const analyticsName = ''; const analyticsNameGA4 = ''; </script> <!-- seo tags --> <meta property="og:image" content="https://www.constructive.dev//"> <meta property="og:type" content="website" /> <!-- Begin Jekyll SEO tag v2.9.0 --> <title>Constructive Programming | Type-driven and LLM-augmented engineering consultancy</title> <meta name="generator" content="Jekyll v4.4.1" /> <meta property="og:title" content="Constructive Programming" /> <meta property="og:locale" content="en_US" /> <meta name="description" content="Type-driven and LLM-augmented engineering consultancy" /> <meta name="twitter:description" property="og:description" content="Type-driven and LLM-augmented engineering consultancy" /> <link rel="canonical" href="https://www.constructive.dev//" /> <meta property="og:url" content="https://www.constructive.dev//" /> <meta property="og:site_name" content="Constructive Programming" /> <meta property="og:type" content="website" /> <meta name="twitter:card" content="summary" /> <meta name="twitter:title" content="Constructive Programming" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"WebSite","description":"Type-driven and LLM-augmented engineering consultancy","headline":"Constructive Programming","name":"Constructive Programming","url":"https://www.constructive.dev//"}</script> <!-- End Jekyll SEO tag --> <!-- RSS --> <link rel="alternate" type="application/atom+xml" title="Constructive Programming" href="https://www.constructive.dev//feed.xml"/> <link type="application/atom+xml" rel="alternate" href="https://www.constructive.dev//feed.xml" title="Constructive Programming" /> <!-- Twitter Cards --> <meta name="twitter:title" content="Constructive Programming"> <meta name="twitter:description" content="Constructive Programming"> <meta name="twitter:card" content="summary"> <meta name="twitter:image" content="https://www.constructive.dev//"> <meta name="twitter:image:alt" content="Constructive Programming"> </head>
   <body>
     
-    <header class="site-header"> <!-- Logo and title --> <div class="branding"> <a href="/"> <img alt="logo img" class="avatar" src="/assets/img/avatar.png" loading="lazy"/> </a> <a class="site-title" aria-label="Constructive Programming" href="/"> Constructive Programming </a> </div> <!-- Toggle menu --> <nav class="clear"> <a aria-label="pull" id="pull" class="toggle" href="#"> <i class="fas fa-bars fa-lg"></i> </a> <!-- Menu --> <ul class="hide"> <li class="separator"> | </li> <li> <a class="clear" aria-label="About" title="About" href="/about/"> <span class="navbar-label ">About</span> </a> </li> <li class="separator"> | </li> <li> <a class="clear" aria-label="Libraries" title="Libraries" href="/libraries/"> <span class="navbar-label ">Libraries</span> </a> </li> <li class="separator"> | </li> <li> <a class="clear" aria-label="Search" title="Search" href="/search/"> <i class="navbar-icon fas fa-search" aria-hidden="true"></i> <span class="navbar-label navbar-label-with-icon">Search</span> </a> </li> <li class="separator"> | </li> <li> <a class="clear" aria-label="Tags" title="Tags" href="/tags/"> <i class="navbar-icon fas fa-tags" aria-hidden="true"></i> <span class="navbar-label navbar-label-with-icon">Tags</span> </a> </li> <li class="separator"> | </li> <li> <a class="clear" aria-label="Type on Strap" title="Type on Strap" href="https://github.com/sylhare/Type-on-Strap"> <span class="navbar-label ">Type on Strap</span> </a> </li> </ul> </nav> </header>
+    <header class="site-header"> <!-- Logo and title --> <div class="branding"> <a class="site-title" aria-label="Constructive Programming" href="/"> Constructive Programming </a> </div> <!-- Toggle menu --> <nav class="clear"> <a aria-label="pull" id="pull" class="toggle" href="#"> <i class="fas fa-bars fa-lg"></i> </a> <!-- Menu --> <ul class="hide"> <li class="separator"> | </li> <li> <a class="clear" aria-label="About" title="About" href="/about/"> <span class="navbar-label ">About</span> </a> </li> <li class="separator"> | </li> <li> <a class="clear" aria-label="Libraries" title="Libraries" href="/libraries/"> <span class="navbar-label ">Libraries</span> </a> </li> <li class="separator"> | </li> <li> <a class="clear" aria-label="Search" title="Search" href="/search/"> <i class="navbar-icon fas fa-search" aria-hidden="true"></i> <span class="navbar-label navbar-label-with-icon">Search</span> </a> </li> <li class="separator"> | </li> <li> <a class="clear" aria-label="Tags" title="Tags" href="/tags/"> <i class="navbar-icon fas fa-tags" aria-hidden="true"></i> <span class="navbar-label navbar-label-with-icon">Tags</span> </a> </li> </ul> </nav> </header>
     <main class="content">
       <div class="home">
 
-  <div id="main" class="call-out"
-       style="background-image: url('/')">
-    <h1> Write Code that is "Correct by Construction" </h1>
-    <p class="lead mt-3">
-      Consulting and open-source libraries for software that is
-      <em>correct by construction</em> — referential, total, terminating.
+  
+  <div id="main" class="container text-center my-5">
+    <h1 class="display-4 mb-3">Constructive Programming</h1>
+    
+    <p class="lead mb-4">Type-driven engineering &amp; LLM-augmented delivery for teams that can't afford regressions.</p>
+    
+    <p>
+      <a href="#consulting" class="btn btn-outline-primary">What we do</a>
+      <a href="https://cal.constructive.dev/constructive"
+         class="btn btn-primary ml-2"
+         target="_blank" rel="noopener">
+        Book a scoping call
+      </a>
     </p>
   </div>
 
   <div id="consulting" class="container my-5">
     <h2 class="text-center mb-3">Consulting</h2>
     <p class="lead text-center mb-4">
-      I help teams make their codebases correct by construction.
+      Type-driven engineering for teams that can't afford another regressive refactor.
     </p>
     <div class="row justify-content-center">
       <div class="col-md-10 col-lg-8">
+
         <p>
-          I'm <strong>Rodolfo Hansen</strong> — author of
-          <a href="https://github.com/Constructive-Programming/eo">cats-eo</a>,
-          designer of the <a href="https://github.com/Constructive-Programming/fixed">Fixed</a>
-          language, and the writer behind a running series on type-driven design
-          at <a href="https://rodolfohansen.medium.com/" target="_blank" rel="noopener">rodolfohansen.medium.com</a> —
-          on total program cardinality, the cost dynamic types accumulate as a
-          codebase grows, dependent and refinement types in mainstream
-          languages, the case for using more optics, and where functional
-          architecture stops earning its complexity.
+          Constructive Programming partners with teams on
+          <strong>Scala</strong> and <strong>Rust</strong> codebases that
+          have accumulated the usual debts of growth — untyped boundaries
+          treated as typed, optional fields treated as required, 800-line
+          objects nobody dares refactor. The thread that runs through every
+          engagement is <em>narrowing</em>: shrinking the set of values a
+          type can hold so that fewer wrong programs compile, and the ones
+          that do are easier for both humans and machines to reason about.
         </p>
 
         <p>
-          I work primarily in Scala and Rust. The thread that runs through every
-          codebase I touch is <em>narrowing</em>: shrinking the set of values a
-          type can hold so that fewer wrong programs compile. That instinct
-          shapes how I review code, model data, and move teams toward typed
-          functional idioms without rewriting the world.
+          What is different about our practice: <strong>we ship production
+          code paired with LLMs</strong>. Constructive programming
+          principles are how we keep generative models useful — narrow
+          types and machine-checked properties are the strictest
+          guardrails an agent can be made to operate against, and they
+          turn non-deterministic output into a verifiable artefact. We
+          help teams adopt agent-native development strategies: pairing
+          the non-deterministic behaviour of agents with the deterministic
+          harnesses — static analysis, refinement types, property tests,
+          goal-enriched context — that grant the ability to trust the
+          output of a self-correcting development session.
         </p>
 
-        <p>Engagements I take on:</p>
+        <p class="mb-2">The shapes of engagement we take on:</p>
         <ul>
-          <li><strong>IC contributions</strong> — ship features in Scala or Rust
-            alongside your existing engineering team.</li>
-          <li><strong>Architecture and advisory</strong> — review designs through
-            a cardinality lens, narrow type signatures, identify where
-            capability-based abstractions, refinement types, or algebraic
-            effects unlock simpler and safer code.</li>
-          <li><strong>Optics, effects and recursion deep dives</strong> — bring
-            cats-eo, Monocle, droste, or your effect system of choice to bear on
-            knotty data-pipeline or state-management problems.</li>
-          <li><strong>Workshops and training</strong> — adapted from the
-            <a href="https://github.com/Constructive-Programming/workshops">constructive programming workshops</a>
-            and the <a href="https://rodolfohansen.medium.com/" target="_blank" rel="noopener">Medium series</a>,
-            for your team's stack and seniority.</li>
+          <li><strong>Architecture and advisory</strong> — design review
+            through a cardinality lens; narrowing type signatures;
+            identifying where capability-based abstractions, refinement
+            types, or algebraic effects unlock simpler code.</li>
+          <li><strong>IC contributions</strong> — embedded in your team
+            to ship typed-FP features in Scala or Rust, with the same
+            constructive discipline applied to PRs as to architecture.</li>
+          <li><strong>Agent-native development</strong> — building the
+            deterministic harness around your codebase (linters, types,
+            properties, eval suites) so your team can move faster with
+            LLMs and trust the output.</li>
+          <li><strong>Workshops and training</strong> — distilled from a
+            decade of constructive-programming workshops, tailored to
+            your stack and team seniority.</li>
         </ul>
 
-        <p>
-          Engagements range from a focused code review to a multi-month embedded
-          role. If any of this sounds useful, I'd love to hear from you.
+        <p class="text-center text-muted my-4">
+          <small>
+            <strong>Recent outcomes</strong> ·
+            11h&nbsp;→&nbsp;15min data pipeline at Otravo ·
+            P95 &lt;20ms, 100% uptime, &minus;30% infra at Bodireel ·
+            Total Program Cardinality static analysis at Royal Philips
+          </small>
         </p>
 
-        <p class="text-center mt-4">
-          <a href="https://www.linkedin.com/in/rodolfohansen/"
-             class="btn btn-primary"
+        <p>
+          Engagements range from a focused two-week review to a multi-month
+          embedded role. Available for select engagements; based in the
+          Netherlands; comfortable with EU MSAs and standard NDAs.
+        </p>
+
+        <p class="text-center mt-4 mb-2">
+          <a href="https://cal.constructive.dev/constructive"
+             class="btn btn-primary btn-lg"
              target="_blank" rel="noopener">
-            Get in touch on LinkedIn
-          </a>
-          <a href="https://rodolfohansen.medium.com/"
-             class="btn btn-outline-secondary ml-2"
-             target="_blank" rel="noopener">
-            Read on Medium
+            Book a scoping call
           </a>
         </p>
+        <p class="text-center text-muted">
+          <small>
+            or email <a href="mailto:consulting@constructive.dev">consulting@constructive.dev</a>
+          </small>
+        </p>
+
       </div>
     </div>
   </div>
@@ -182,20 +202,108 @@
     </p>
   </div>
 
-  <div id="articles" class="bootstrap-iso">
+  <div id="writing" class="container my-5">
     <h2 class="text-center mt-4 mb-3">Writing</h2>
-    <div class="d-flex flex-wrap justify-content-center">
-      
-
-    </div>
+    <p class="text-center text-muted mb-4">
+      Long-form on type systems, optics, cardinality, and LLM-augmented engineering.
+    </p>
     
 
+<div class="medium-posts bootstrap-iso">
+  <div class="row justify-content-center">
+    
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="card mt-3 flex-fill">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-1">
+              <a href="https://rodolfohansen.medium.com/the-one-fp-design-pattern-4498498cef64"
+                 class="post-link"
+                 target="_blank" rel="noopener"
+                 aria-label="The ONE fp Design Pattern">The ONE fp Design Pattern</a>
+            </h5>
+            
+              <p class="card-subtitle text-muted mb-2">
+                <small>Sep 2024</small>
+              </p>
+            
+            <p class="card-text mt-auto"><small>How functional programmers actually approach software architecture — under the misconceptions.</small></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="card mt-3 flex-fill">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-1">
+              <a href="https://rodolfohansen.medium.com/the-hidden-powers-of-total-program-cardinality-9351ba774d4d"
+                 class="post-link"
+                 target="_blank" rel="noopener"
+                 aria-label="The Unanticipated Powers of Total Program Cardinality">The Unanticipated Powers of Total Program Cardinality</a>
+            </h5>
+            
+              <p class="card-subtitle text-muted mb-2">
+                <small>Jan 2024</small>
+              </p>
+            
+            <p class="card-text mt-auto"><small>A new code-quality metric grounded in counting the inhabitants of a program's types.</small></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="card mt-3 flex-fill">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-1">
+              <a href="https://rodolfohansen.medium.com/the-most-common-mistake-we-make-as-systems-thinkers-29601ddd4747"
+                 class="post-link"
+                 target="_blank" rel="noopener"
+                 aria-label="The most common mistake we make as Systems Thinkers">The most common mistake we make as Systems Thinkers</a>
+            </h5>
+            
+              <p class="card-subtitle text-muted mb-2">
+                <small>Nov 2023</small>
+              </p>
+            
+            <p class="card-text mt-auto"><small>The reification fallacy and the problematic abstractions it produces.</small></p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="card mt-3 flex-fill">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-1">
+              <a href="https://levelup.gitconnected.com/poor-mans-pi-types-a6c8594eb15d"
+                 class="post-link"
+                 target="_blank" rel="noopener"
+                 aria-label="Poor man's Pi (types)">Poor man's Pi (types)</a>
+            </h5>
+            
+              <p class="card-subtitle text-muted mb-2">
+                <small>Mar 2023</small>
+              </p>
+            
+            <p class="card-text mt-auto"><small>Practical dependent typing in mainstream languages, without a specialised compiler.</small></p>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+</div>
+
+    <p class="text-center mt-4">
+      <a href="https://rodolfohansen.medium.com/"
+         class="btn btn-outline-primary"
+         target="_blank" rel="noopener">
+        More on Medium →
+      </a>
+    </p>
   </div>
 
 </div>
 
     </main>
     
-    <footer class="site-footer"> <p class="text"> Copyright Rodolfo Hansen, 2026 </p> <div class="footer-icons"> <ul> <!-- Social icons from Font Awesome, if enabled --> <li> <a feed.xml href="/feed.xml" title="Follow RSS feed" target="_blank"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fas fa-rss fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://github.com/sylhare" title="Follow on Github" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x fa-inverse"></i> </span> </a> </li> </ul> </div> </footer>
+    <footer class="site-footer"> <p class="text"> Copyright Constructive Programming, 2026 </p> <div class="footer-icons"> <ul> <!-- Social icons from Font Awesome, if enabled --> <li> <a feed.xml href="/feed.xml" title="Follow RSS feed" target="_blank"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fas fa-rss fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://github.com/Constructive-Programming" title="Follow on Github" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://www.linkedin.com/in/rodolfohansen" title="Follow on Linkedin" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="mailto:consulting@constructive.dev" title="Follow on Mail" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fas fa-envelope fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://medium.com/@rodolfohansen.medium.com" title="Follow on Medium" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-medium fa-stack-1x fa-inverse"></i> </span> </a> </li> </ul> </div> </footer>
   </body>
 </html>
