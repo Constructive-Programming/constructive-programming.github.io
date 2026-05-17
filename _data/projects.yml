@@ -1,0 +1,81 @@
+# Projects listed on the home page and /projects page.
+# Grouped by `category`. Order within a category is preserved.
+
+- slug: eo
+  name: "cats-eo"
+  category: libraries
+  tagline: "Existential optics for Scala 3, built on cats."
+  description: >
+    One Optic[S, T, A, B, F] trait unifies Lens, Prism, Optional,
+    Traversal, Grate, AlgLens and Kaleidoscope. Discipline-checked
+    laws, scoverage-driven quality, JMH benchmarks against Monocle,
+    and circe + avro integrations with an observable-by-default Ior
+    failure surface.
+  stack: "Scala 3 + cats"
+  status: "Active — v0.1.0 (2026)"
+  repo: "https://github.com/Constructive-Programming/eo"
+  docs: "https://github.com/Constructive-Programming/eo#readme"
+
+- slug: surreals
+  name: "surreals"
+  category: libraries
+  tagline: "Conway's surreal numbers as a cats-algebra Field."
+  description: >
+    A small Scala 3 exploration of surreal numbers, encoded with
+    droste recursion schemes (Fix[SurrealStructure]) and memoised
+    with scaffeine. Discipline laws under test.
+  stack: "Scala 3 + cats algebra + droste"
+  status: "Experimental"
+  repo: "https://github.com/Constructive-Programming/surreals"
+
+- slug: cardinality
+  name: "scala-cardinality"
+  category: libraries
+  tagline: "Counting type inhabitants — keep your types small."
+  description: >
+    A type-cardinality calculator for Scala ADTs (|T| over +, *, ^),
+    plus a scalafix rule that flags sum types used as function
+    arguments. Backs the "Keep Your Types Small" argument with code.
+  stack: "Scala + scalafix"
+  status: "Dormant (2022)"
+  repo: "https://github.com/Constructive-Programming/scala-cardinality"
+
+- slug: fixed
+  name: "Fixed"
+  category: language
+  tagline: "A capability-first functional language."
+  description: >
+    Takes Koka's algebraic effects, Perceus reference counting and
+    FBIP, then pushes the whole language up to the typeclass level:
+    programs are written against capabilities (predicate functors
+    à la Quine) and the compiler picks the concrete data layout.
+    Properties (prop / forall / implies) and refinement types make
+    lightweight theorem proving part of the language.
+  stack: "Design — Rust compiler planned, C target"
+  status: "Phase 0 — design, 11 example programs"
+  repo: "https://github.com/Constructive-Programming/fixed"
+
+- slug: workshops
+  name: "Workshops"
+  category: learning
+  tagline: "Live Scala workshops on constructive programming."
+  description: >
+    Org-mode source for hands-on sessions tying together
+    constructive logic, computation and composition: propositions
+    as types, ADTs and the principle of least astonishment,
+    functional reactive streams as state management.
+  stack: "org-mode → reveal.js / LaTeX"
+  status: "Archive"
+  repo: "https://github.com/Constructive-Programming/workshops"
+
+- slug: presentations
+  name: "Talks"
+  category: learning
+  tagline: '"Keep Your Types Small", "Correct by Construction" and more.'
+  description: >
+    Conference and meetup talks given around constructive
+    programming. Sources are org-mode; outputs are Beamer PDFs and
+    reveal.js decks.
+  stack: "org-mode → reveal.js / Beamer"
+  status: "Archive"
+  repo: "https://slides.com/rodolfohansen"
