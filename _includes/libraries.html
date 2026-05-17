@@ -1,0 +1,31 @@
+{% comment %}
+  Library grid. Source: _data/libraries.yml.
+{% endcomment %}
+
+<div class="libraries bootstrap-iso">
+  <div class="row justify-content-center">
+    {% for library in site.data.libraries %}
+      <div class="col-md-6 col-lg-4 d-flex">
+        <div class="card mt-3 flex-fill" style="min-height: 22rem;">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-1">{{ library.name }}</h5>
+            <p class="card-subtitle text-muted mb-2"><small>{{ library.tagline }}</small></p>
+            <p class="card-text"><small>{{ library.description | strip_newlines }}</small></p>
+            <ul class="list-unstyled mb-3 mt-auto">
+              {% if library.stack %}<li><small><strong>Stack:</strong> {{ library.stack }}</small></li>{% endif %}
+              {% if library.status %}<li><small><strong>Status:</strong> {{ library.status }}</small></li>{% endif %}
+            </ul>
+            <div>
+              {% if library.docs %}
+                <a href="{{ library.docs }}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Docs</a>
+              {% endif %}
+              {% if library.repo %}
+                <a href="{{ library.repo }}" class="btn btn-outline-secondary btn-sm" target="_blank" rel="noopener">Source</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

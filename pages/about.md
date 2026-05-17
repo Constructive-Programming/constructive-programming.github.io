@@ -20,6 +20,5 @@ There are three starting criteria for constructive programs:
 
 ## See it in code
 
-The [Projects]({{ '/projects/' | relative_url }}) page lists the
-libraries, the language ([Fixed](https://github.com/Constructive-Programming/fixed)),
-and the workshop / talk material that put this methodology to work.
+The [Libraries]({{ '/libraries/' | relative_url }}) page lists the
+Scala libraries that bring constructive idioms into everyday code.

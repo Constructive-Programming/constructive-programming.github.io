@@ -9,16 +9,67 @@ bootstrap: true
        style="background-image: url('{{ site.header_feature_image | relative_url }}')">
     <h1> {{ site.header_text | default: "Change <code>header_text</code> in <code>_config.yml</code>"}} </h1>
     <p class="lead mt-3">
-      Libraries, a language, and teaching material for software that is
+      Open-source libraries and consulting for software that is
       <em>correct by construction</em> — referential, total, terminating.
     </p>
   </div>
 
-  <div id="projects" class="container">
-    {% include projects.html %}
+  <div id="libraries" class="container">
+    <h2 class="text-center mt-5 mb-3">Libraries</h2>
+    {% include libraries.html %}
     <p class="text-center mt-4 mb-5">
-      <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline-primary">More about the projects →</a>
+      <a href="{{ '/libraries/' | relative_url }}" class="btn btn-outline-primary">All libraries →</a>
     </p>
+  </div>
+
+  <div id="consulting" class="container my-5">
+    <h2 class="text-center mb-3">Consulting</h2>
+    <p class="lead text-center mb-4">
+      I help teams make their codebases correct by construction.
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <p>
+          I'm <strong>Rodolfo Hansen</strong> — author of
+          <a href="https://github.com/Constructive-Programming/eo">cats-eo</a>,
+          designer of the <a href="https://github.com/Constructive-Programming/fixed">Fixed</a>
+          language, and the speaker behind
+          <a href="https://slides.com/rodolfohansen/keep-your-types-small">Keep Your Types Small</a>
+          and
+          <a href="https://slides.com/rodolfohansen/correct-by-construction">Correct by Construction</a>.
+          I work primarily in Scala and Rust, with deep experience in typed functional
+          design, optics, algebraic effects, and recursion schemes.
+        </p>
+
+        <p>Engagements I take on:</p>
+        <ul>
+          <li><strong>IC contributions</strong> — ship features in Scala or Rust
+            alongside your existing engineering team.</li>
+          <li><strong>Architecture and advisory</strong> — review designs, narrow
+            type signatures, and identify where capability-based abstractions or
+            algebraic effects unlock simpler, safer code.</li>
+          <li><strong>Optics, effects and recursion deep dives</strong> — bring
+            cats-eo, Monocle, droste, or your effect system of choice to bear on
+            knotty data-pipeline or state-management problems.</li>
+          <li><strong>Workshops and training</strong> — adapted from the
+            <a href="https://github.com/Constructive-Programming/workshops">constructive programming workshops</a>
+            (logic, ADTs, streaming) for your team's stack and seniority.</li>
+        </ul>
+
+        <p>
+          Engagements range from a focused code review to a multi-month embedded
+          role. If any of this sounds useful, I'd love to hear from you.
+        </p>
+
+        <p class="text-center mt-4">
+          <a href="https://www.linkedin.com/in/rodolfohansen/"
+             class="btn btn-primary"
+             target="_blank" rel="noopener">
+            Get in touch on LinkedIn
+          </a>
+        </p>
+      </div>
+    </div>
   </div>
 
   <div id="articles" class="bootstrap-iso">
