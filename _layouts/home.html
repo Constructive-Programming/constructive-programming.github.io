@@ -79,6 +79,41 @@ bootstrap: true
     </div>
   </div>
 
+  <div id="fixed" class="container my-5">
+    <h2 class="text-center mb-3">Fixed — a new functional language</h2>
+    <p class="lead text-center mb-4">
+      Program against capabilities, not data structures.
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <p>
+          <strong>Fixed</strong> takes everything possible from
+          <a href="https://koka-lang.github.io/koka/doc/index.html" target="_blank" rel="noopener">Koka</a> —
+          algebraic effects with evidence passing, Perceus reference counting,
+          functional-but-in-place updates — and pushes the whole language up to
+          the typeclass level. You describe what values can do (<code>cap</code>);
+          the compiler picks how to lay them out. Properties (<code>prop</code>)
+          live alongside the capabilities they govern; refinement types are
+          first-class.
+        </p>
+        <p>
+          The design draws on
+          <a href="https://en.wikipedia.org/wiki/Predicate_functor_logic" target="_blank" rel="noopener">Quine's predicate functor logic</a>
+          and Quantitative Type Theory. Phase 0 — design — is in flight,
+          with eleven example programs exercising the language. The compiler
+          (planned in Rust, targeting C) and the formal spec come next.
+        </p>
+        <p class="text-center mt-4">
+          <a href="https://github.com/Constructive-Programming/fixed"
+             class="btn btn-primary"
+             target="_blank" rel="noopener">
+            Read the design
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div id="libraries" class="container">
     <h2 class="text-center mt-5 mb-3">Libraries</h2>
     {% include libraries.html featured=true %}
