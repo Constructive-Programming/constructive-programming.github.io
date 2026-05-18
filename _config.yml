@@ -19,5 +19,9 @@ footer_text: "Copyright Constructive Programming,"
 
 # BUILD SETTINGS
 katex: true
+# auto: follow the visitor's system preference (prefers-color-scheme),
+# remember manual toggle via sessionStorage. Renders the theme-toggle
+# in the navbar.
+color_theme: auto
 remote_theme: sylhare/Type-on-Strap
 plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed, jekyll-remote-theme]

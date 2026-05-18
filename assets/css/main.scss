@@ -269,3 +269,95 @@ pre code {
 .home > #main {
   padding-bottom: 1.5rem;
 }
+
+/* ============================================================
+   Dark mode overrides
+
+   Type-on-Strap scopes its color tokens by html[data-theme="dark"]
+   and runs a `prefers-color-scheme` check on page load (head.liquid)
+   when site.color_theme: auto.
+
+   Bootstrap 4 doesn't theme its own components, so .card surfaces
+   and a few buttons need explicit overrides for dark mode.
+   ============================================================ */
+
+html[data-theme="dark"] {
+
+  /* Card surfaces (Bootstrap default = #fff; theme doesn't override) */
+  .card {
+    background-color: var(--blockquote, #2d333b);
+    color: var(--text, #cdd9e5);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .card-title,
+  .card-title a {
+    color: var(--text, #cdd9e5);
+  }
+
+  .card-subtitle.text-muted,
+  .text-muted {
+    color: rgba(255, 255, 255, 0.55) !important;
+  }
+
+  /* Section separators — invert the alpha base */
+  .home > #consulting::before,
+  .home > #fixed::before,
+  .home > #libraries::before,
+  .home > #writing::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  }
+
+  #consulting > h2.text-center::after,
+  #fixed > h2.text-center::after {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Bootstrap outline buttons: re-derive border + text from theme tokens */
+  .btn-outline-secondary {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  .btn-outline-secondary:hover,
+  .btn-outline-secondary:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+
+  .btn-outline-primary {
+    color: var(--link, #79c0ff);
+    border-color: var(--link, #79c0ff);
+  }
+  .btn-outline-primary:hover,
+  .btn-outline-primary:focus {
+    background-color: rgba(121, 192, 255, 0.12);
+    color: var(--link, #79c0ff);
+  }
+
+  /* Tables on /engagements/ render with Bootstrap defaults; tint borders */
+  table {
+    color: var(--text, #cdd9e5);
+  }
+  table th,
+  table td {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Recent-outcomes proof line and footer */
+  #consulting .text-muted small {
+    color: rgba(255, 255, 255, 0.65);
+  }
+}
+
+/* Defensive: even when the visitor's OS prefers dark but JS hasn't
+   set data-theme yet (e.g. first paint with disabled JS), do not show
+   a flash of white card on a dark background. Mirrors the rules above
+   under @media when no data-theme attribute is present yet. */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .card {
+    background-color: #2d333b;
+    color: #cdd9e5;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
