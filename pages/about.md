@@ -45,7 +45,7 @@ Royal Philips**, developing static-analysis metrics around *Total Program
 Cardinality* and driving software-craftsmanship practice across Europe.
 Before that, he was a **Software Development Manager at Otravo**
 (Amsterdam) — three teams under his lead, machine-learning shipped to
-production, a core loading pipeline refactored from eleven hours down to
+production, a core loading pipeline taken from eleven hours down to
 fifteen minutes, defect reports cut by a third. He was **CTO of Bodireel**
 (London), a health-and-fitness platform built on a stateless RESTful Scala
 backend with Angular and Xamarin clients — 100% uptime, P95 under 20 ms,

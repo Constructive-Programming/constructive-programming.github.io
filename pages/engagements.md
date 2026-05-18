@@ -23,12 +23,12 @@ half-day working session with your team.
 |---|---|
 | **Length** | 2 weeks calendar; ~40 hours of our time |
 | **Cadence** | Async + 3 scheduled sessions (kick-off, mid-point, readout) |
-| **Best for** | Teams considering a major refactor, an architecture direction change, or a typed-FP / agent-native adoption |
+| **Best for** | Teams considering a major improvement plan, an architecture direction change, or a typed-FP / agent-native adoption |
 | **You provide** | Read access to the codebase, an hour with two or three principals, the strategic question we are trying to answer |
 | **You receive** | A written architecture review (typically 8–15 pages) covering observed structure, the strongest two or three risks, three to five concrete narrowing moves with effort estimates, and a working session to walk through it |
-| **Pricing** | Fixed fee, quoted on the scoping call <!-- TODO: set a public starting figure when ready --> |
+| **Pricing** | **€10,000 fixed fee** (≈5 days of effort at €2,000/day) |
 
-Best when the question is *"are we about to spend six months on the wrong refactor?"*
+Best when the question is *"are we about to spend six months on the wrong improvement plan?"*
 
 ## 2 · Fractional advisory
 
@@ -41,7 +41,7 @@ working group. Two days per week, three-month minimum.
 | **Cadence** | 2 days / week — one day on-site or in synchronous sessions, one day async / async code review |
 | **Best for** | Teams adopting typed-FP idioms over time, building out agent-native development practice, or undergoing a multi-quarter modernisation |
 | **You receive** | Embedded advisory across architecture, PR review, hiring rubric, and team rituals; private Slack / Discord channel; monthly written summary for stakeholders |
-| **Pricing** | Day rate × cadence, billed monthly <!-- TODO: publish range when comfortable --> |
+| **Pricing** | **€2,000 / day**, billed monthly (≈€16,000 / month at the 2-days/week cadence) |
 
 Best when the question is *"how do we adopt this without breaking the team while we ship?"*
 
@@ -57,7 +57,7 @@ architecture.
 | **Cadence** | 4 or 5 days / week, depending on availability |
 | **Best for** | Teams that need senior delivery on a specific build — a new optics-heavy data pipeline, a Rust subsystem, an effect-system migration — and benefit from the resulting team mentorship |
 | **You receive** | Pull requests, design docs, eval suites — shipped under your repo and your release cadence; pair sessions on demand |
-| **Pricing** | Day rate, weekly invoicing <!-- TODO: publish range when comfortable --> |
+| **Pricing** | **€2,000 / day**, weekly invoicing |
 
 Best when the question is *"can we just get someone in here who has shipped this before?"*
 
@@ -70,10 +70,6 @@ Best when the question is *"can we just get someone in here who has shipped this
 - **Invoicing** monthly (advisory) or weekly (IC); net 30.
 - **IP** assigned per the engagement agreement; work product is yours
   on payment.
-- **LLM tooling** is part of how we work. We pair with Claude / GPT
-  inside your repo under the same code-review bar as a human IC;
-  models, contexts, and conventions are agreed in writing before
-  kick-off and recorded in the engagement letter.
 - **Availability** — currently *available for select engagements*.
   The scoping call will be honest about start dates.
 
