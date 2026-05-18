@@ -1,14 +1,13 @@
 ---
 layout: page
 title: Engagements
-subtitle: How we work — three shapes, one bar for quality
+subtitle: How we work — three offerings, one bar for quality
 permalink: /engagements/
 tags: engagements
 ---
 
-Three shapes of work cover almost everything we take on. Each one has
-a fixed structure so you know what you are buying; the actual content
-is shaped on the scoping call.
+We have three main offerings. Each has a fixed structure so you know
+what you are buying; the actual content is shaped on the scoping call.
 
 If your need does not fit any of the three, the [scoping call](https://cal.constructive.dev/rhansen)
 is the right place to figure it out — there is no charge for it.
@@ -75,9 +74,9 @@ Best when the question is *"can we just get someone in here who has shipped this
 ## What happens after you book
 
 1. **Scoping call** (30 min, free) — we describe what we do, you
-   describe the problem, we work out together which shape fits.
+   describe the problem, we work out together which offering fits.
 2. **Written scope** — within 48 hours of the call you receive a
-   one-pager: shape, deliverables, dates, price.
+   one-pager: offering, deliverables, dates, price.
 3. **Engagement letter** — once you accept the scope, we send the
    MSA + SOW. Sign-back closes the loop.
 4. **Kick-off** — usually within two weeks of sign-back.
