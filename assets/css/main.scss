@@ -444,3 +444,297 @@ html[data-theme="dark"] {
     border-color: rgba(255, 255, 255, 0.08);
   }
 }
+
+/* ============================================================
+   Custom layout layer — replaces Bootstrap 4
+
+   Bootstrap-CSS, Bootstrap-JS, jQuery and Popper are now off the
+   asset stack. This layer provides every primitive the templates
+   use: container, grid, spacing, text, flex, cards, buttons. Plus
+   a designed type scale (.cp-display, h1–h6) that replaces the
+   rented .display-4 utility.
+
+   Type scale base: 17px (1.0625rem). Step ratio: 1.25 (major third).
+   ============================================================ */
+
+/* ---- Container -------------------------------------------------- */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 576px)  { .container { max-width: 540px; } }
+@media (min-width: 768px)  { .container { max-width: 720px; padding-left: 1.25rem; padding-right: 1.25rem; } }
+@media (min-width: 992px)  { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+
+/* ---- 12-column grid (Bootstrap-shaped flex grid) --------------- */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+.row > [class*="col-"] {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+
+@media (min-width: 768px) {
+  .col-md-6  { flex: 0 0 50%;       max-width: 50%; }
+  .col-md-8  { flex: 0 0 66.6667%;  max-width: 66.6667%; }
+  .col-md-10 { flex: 0 0 83.3333%;  max-width: 83.3333%; }
+}
+@media (min-width: 992px) {
+  .col-lg-3  { flex: 0 0 25%;       max-width: 25%; }
+  .col-lg-4  { flex: 0 0 33.3333%;  max-width: 33.3333%; }
+  .col-lg-6  { flex: 0 0 50%;       max-width: 50%; }
+  .col-lg-8  { flex: 0 0 66.6667%;  max-width: 66.6667%; }
+}
+
+/* ---- Native CSS Grid (used by the new card includes) ----------- */
+
+.cp-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+@media (min-width: 640px) { .cp-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) { .cp-grid { grid-template-columns: repeat(3, 1fr); } }
+.cp-grid-4 { /* card-row variant with 4 columns at large screens */ }
+@media (min-width: 992px) { .cp-grid-4 { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---- Display + utility -------------------------------------------- */
+
+.d-flex   { display: flex; }
+.d-block  { display: block; }
+.d-inline-block { display: inline-block; }
+.flex-fill   { flex: 1 1 auto; }
+.flex-wrap   { flex-wrap: wrap; }
+.flex-column { flex-direction: column; }
+
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+.list-unstyled { list-style: none; padding-left: 0; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.text-muted { color: rgba(0, 0, 0, 0.55); }
+html[data-theme="dark"] .text-muted { color: rgba(255, 255, 255, 0.55); }
+
+/* ---- Spacing utilities (rem-based) ------------------------------ */
+
+.m-0  { margin: 0; }
+.mb-0 { margin-bottom: 0; }    .mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; } .mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; } .mb-5 { margin-bottom: 3rem; }
+.mt-0 { margin-top: 0; }       .mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }    .mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }    .mt-5 { margin-top: 3rem; }
+.mt-auto { margin-top: auto; }
+.my-3 { margin-top: 1rem;  margin-bottom: 1rem; }
+.my-4 { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+.my-5 { margin-top: 3rem;   margin-bottom: 3rem; }
+.ml-2 { margin-left: 0.5rem; }
+.ml-3 { margin-left: 1rem; }
+
+/* ---- Designed type scale ---------------------------------------- */
+/* Base 1rem ≈ 17px. Step ratio 1.25. */
+
+.cp-display {
+  font-family: $cp-sans;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 4.5vw, 3.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+}
+
+h1 { font-size: 2.1rem; line-height: 1.15; }
+h2 { font-size: 1.7rem; line-height: 1.2;  }
+h3 { font-size: 1.4rem; line-height: 1.3;  }
+h4 { font-size: 1.2rem; line-height: 1.3;  }
+h5 { font-size: 1.075rem; line-height: 1.4; }
+h6 { font-size: 1rem;   line-height: 1.4;  }
+
+@media (max-width: 576px) {
+  .cp-display { font-size: clamp(2rem, 8vw, 2.6rem); }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.45rem; }
+  h3 { font-size: 1.25rem; }
+}
+
+/* ---- Buttons ---------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.4rem;
+  font-family: $cp-sans;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  text-align: center;
+  background: transparent;
+  color: inherit;
+}
+.btn:focus { outline: 2px solid $cp-accent; outline-offset: 2px; }
+.btn-sm { padding: 0.36rem 0.85rem; font-size: 0.86rem; border-radius: 0.35rem; }
+.btn-lg { padding: 0.75rem 1.5rem;  font-size: 1.05rem; border-radius: 0.5rem; }
+
+/* .btn-primary + .btn-outline-primary colour rules live earlier in
+   this file (in the indigo-accent block) — those rules already use
+   $cp-accent and now apply on top of the .btn base above. */
+
+/* ---- Cards ------------------------------------------------------ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.4rem 1.2rem;
+  height: 100%;
+}
+
+/* New card include classes (lib-card / article-card) — typographic
+   ranks expressed through weight + size + colour, not nested <small>. */
+
+.card-title {
+  font-family: $cp-sans;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.15rem 0;
+  line-height: 1.3;
+}
+.card-title a { color: inherit; text-decoration: none; }
+.card-title a:hover { color: $cp-accent; }
+
+.card-subtitle {
+  font-family: $cp-sans;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.62);
+  margin: 0 0 0.85rem 0;
+  line-height: 1.4;
+}
+
+.card-text {
+  font-family: $cp-sans;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  color: rgba(0, 0, 0, 0.78);
+}
+
+.card-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  margin-top: auto;
+  font-family: $cp-mono;
+  font-size: 0.78rem;
+  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.015em;
+}
+.card-meta li { margin: 0.1rem 0; }
+.card-meta-key {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  margin-right: 0.25rem;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.card-meta-date {
+  font-family: $cp-mono;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0 0 0.8rem 0;
+}
+
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Dark-mode card surface + meta colours */
+html[data-theme="dark"] .card {
+  background: #2d333b;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme="dark"] .card-title a { color: inherit; }
+html[data-theme="dark"] .card-title a:hover { color: $cp-accent-dim; }
+html[data-theme="dark"] .card-subtitle { color: rgba(255, 255, 255, 0.7); }
+html[data-theme="dark"] .card-text     { color: rgba(255, 255, 255, 0.82); }
+html[data-theme="dark"] .card-meta     { color: rgba(255, 255, 255, 0.55); }
+html[data-theme="dark"] .card-meta-key { color: rgba(255, 255, 255, 0.45); }
+html[data-theme="dark"] .card-meta-date{ color: rgba(255, 255, 255, 0.5);  }
+
+/* ---- Footer compliance line ------------------------------------- */
+
+.site-footer .footer-legal {
+  font-family: $cp-sans;
+  font-size: 0.82rem;
+  color: rgba(0, 0, 0, 0.55);
+  margin-top: 0.25rem;
+}
+html[data-theme="dark"] .site-footer .footer-legal { color: rgba(255, 255, 255, 0.55); }
+
+/* ---- Inline-SVG nav + footer icons ----------------------------- */
+
+.cp-icon {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  vertical-align: -0.18em;
+  fill: currentColor;
+}
+.cp-social-icon {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+.site-footer .footer-icons ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+}
+.site-footer .footer-icons li { margin: 0; }
+.site-footer .footer-icons a {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.site-footer .footer-icons a:hover { color: $cp-accent; }
+html[data-theme="dark"] .site-footer .footer-icons a { color: rgba(255, 255, 255, 0.55); }
+html[data-theme="dark"] .site-footer .footer-icons a:hover { color: $cp-accent-dim; }
+

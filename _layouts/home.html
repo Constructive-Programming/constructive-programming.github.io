@@ -9,7 +9,7 @@ bootstrap: true
     Plain hero — no theme call-out, no background-image trick.
   {% endcomment %}
   <div id="main" class="container text-center my-5">
-    <h1 class="display-4 mb-3">{{ site.header_text | default: site.title }}</h1>
+    <h1 class="cp-display mb-3">{{ site.header_text | default: site.title }}</h1>
     {% if site.header_subtitle %}
     <p class="lead mb-4">{{ site.header_subtitle }}</p>
     {% endif %}

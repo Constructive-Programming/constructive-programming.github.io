@@ -1,6 +1,6 @@
 name: Constructive Programming
 description: Type-driven and LLM-augmented engineering consultancy
-url: https://www.constructive.dev/
+url: https://www.constructive.dev
 
 title: Constructive Programming
 favicon: assets/img/favicon.svg
@@ -12,6 +12,15 @@ header_subtitle: Types as guardrails for AI agents. We ship production code pair
 
 # Footer
 footer_text: "Copyright Constructive Programming,"
+
+# Legal / compliance footer (rendered if filled). Procurement teams ask
+# for these before signing an MSA; volunteering them removes friction.
+# Leave empty strings to suppress the legal line entirely.
+legal:
+  entity: "Constructive Programming"
+  kvk: ""   # KvK (Dutch Chamber of Commerce) number, e.g. "12345678"
+  vat: ""   # BTW / VAT, e.g. "NL001234567B01"
+  insurance: "E&amp;O insurance available on request."
 
 # Analytics: switch to Plausible (or remove) when we have a host;
 # UA was sunset July 2023 so we no longer emit a measurement id.
