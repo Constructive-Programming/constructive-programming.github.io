@@ -16853,18 +16853,22 @@ of the unique scss that your blog needs.
 
    System font stacks — no webfont weight on the critical path.
    ============================================================ */
-/* --- Body: serif, tighter leading, slight optical letter-spacing ---- */
-body,
-.post-page,
-.page-content,
-p,
-li,
-blockquote {
+/* --- Body: serif, tighter leading, slight optical letter-spacing.
+
+   Selectors prefixed with `html` to bump specificity to 0,0,2 — Bootstrap
+   loads after this stylesheet in the head, so a bare `body { ... }` rule
+   loses the cascade tie. `html body` wins. ---- */
+html body,
+html .post-page,
+html .page-content,
+html p,
+html li,
+html blockquote {
   font-family: "Charter", "Iowan Old Style", "Source Serif Pro", "Apple Garamond", "Palatino", "Georgia", serif;
   letter-spacing: -0.003em;
 }
 
-body {
+html body {
   font-size: 1.0625rem; /* ~17px from default ~16px; agent wanted ~19 — moderate bump */
   line-height: 1.65;
 }
@@ -17093,6 +17097,109 @@ pre code {
    rhythm so the page reads as one piece, not hero + four boxes. */
 .home > #main {
   padding-bottom: 1.5rem;
+}
+
+/* ============================================================
+   Dark mode overrides
+
+   Type-on-Strap scopes its color tokens by html[data-theme="dark"]
+   and runs a `prefers-color-scheme` check on page load (head.liquid)
+   when site.color_theme: auto.
+
+   Bootstrap 4 doesn't theme its own components, so .card surfaces
+   and a few buttons need explicit overrides for dark mode.
+   ============================================================ */
+html[data-theme=dark] {
+  /* Body surface — Bootstrap 4 ships `body { background: #fff }` and the
+     theme's --background variable only applies to `<html>`. Override body
+     directly so the page background actually goes dark. */
+}
+html[data-theme=dark] body {
+  background-color: var(--background, #22272e);
+  color: var(--text, #cdd9e5);
+}
+html[data-theme=dark] {
+  /* Card surfaces (Bootstrap default = #fff; theme doesn't override) */
+}
+html[data-theme=dark] .card {
+  background-color: var(--blockquote, #2d333b);
+  color: var(--text, #cdd9e5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+html[data-theme=dark] .card-title,
+html[data-theme=dark] .card-title a {
+  color: var(--text, #cdd9e5);
+}
+html[data-theme=dark] .card-subtitle.text-muted,
+html[data-theme=dark] .text-muted {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+html[data-theme=dark] {
+  /* Section separators — invert the alpha base */
+}
+html[data-theme=dark] .home > #consulting::before,
+html[data-theme=dark] .home > #fixed::before,
+html[data-theme=dark] .home > #libraries::before,
+html[data-theme=dark] .home > #writing::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+}
+html[data-theme=dark] #consulting > h2.text-center::after,
+html[data-theme=dark] #fixed > h2.text-center::after {
+  background: rgba(255, 255, 255, 0.4);
+}
+html[data-theme=dark] {
+  /* Bootstrap outline buttons: re-derive border + text from theme tokens */
+}
+html[data-theme=dark] .btn-outline-secondary {
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+html[data-theme=dark] .btn-outline-secondary:hover,
+html[data-theme=dark] .btn-outline-secondary:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+html[data-theme=dark] .btn-outline-primary {
+  color: var(--link, #79c0ff);
+  border-color: var(--link, #79c0ff);
+}
+html[data-theme=dark] .btn-outline-primary:hover,
+html[data-theme=dark] .btn-outline-primary:focus {
+  background-color: rgba(121, 192, 255, 0.12);
+  color: var(--link, #79c0ff);
+}
+html[data-theme=dark] {
+  /* Tables on /engagements/ render with Bootstrap defaults; tint borders */
+}
+html[data-theme=dark] table {
+  color: var(--text, #cdd9e5);
+}
+html[data-theme=dark] table th,
+html[data-theme=dark] table td {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+html[data-theme=dark] {
+  /* Recent-outcomes proof line and footer */
+}
+html[data-theme=dark] #consulting .text-muted small {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Defensive: even when the visitor's OS prefers dark but JS hasn't
+   set data-theme yet (e.g. first paint with disabled JS), do not show
+   a flash of white card on a dark background. Mirrors the rules above
+   under @media when no data-theme attribute is present yet. */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) body {
+    background-color: #22272e;
+    color: #cdd9e5;
+  }
+  html:not([data-theme]) .card {
+    background-color: #2d333b;
+    color: #cdd9e5;
+    border-color: rgba(255, 255, 255, 0.08);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
