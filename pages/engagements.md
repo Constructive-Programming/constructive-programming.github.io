@@ -3,7 +3,6 @@ layout: page
 title: Engagements
 subtitle: How we work — three shapes, one bar for quality
 permalink: /engagements/
-feature-img: "assets/img/pexels/circuit.jpeg"
 tags: engagements
 ---
 
