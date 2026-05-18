@@ -42,6 +42,12 @@ $cp-mono:
   "Liberation Mono",
   monospace;
 
+/* Brand accent — deep indigo. Used on links, primary buttons, section
+   numbers, and the favicon mark. */
+$cp-accent:      #3b3b8c;
+$cp-accent-dim:  #5e5eb8;   /* lighter for dark-mode + hover */
+$cp-accent-soft: rgba(59, 59, 140, 0.10);
+
 /* --- Body: serif, tighter leading, slight optical letter-spacing.
 
    Selectors prefixed with `html` to bump specificity to 0,0,2 — Bootstrap
@@ -214,26 +220,17 @@ pre code {
   padding-bottom: 1rem;
 }
 
-/* Decorative separator above each section header. Wider, thicker
-   on the strongest section (Consulting). */
-.home > #consulting::before,
-.home > #fixed::before,
-.home > #libraries::before,
-.home > #writing::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 64px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.18), transparent);
-}
-
-.home > #consulting::before {
-  width: 160px;
-  height: 2px;
+/* Numbered section markers — `01 · Consulting`, `02 · Fixed`, etc.
+   Replaces the old gradient separators with a typographic move:
+   small caps, monospace, indigo accent. Reads like a chapter mark. */
+.home .section-number {
+  font-family: $cp-mono;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $cp-accent;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
 }
 
 /* Descending H2 sizes: Consulting is loudest, Writing is quietest. */
@@ -257,21 +254,68 @@ pre code {
   }
 }
 
-/* Subtle accent under each H2: optical anchor for the gaze. */
-#consulting > h2.text-center::after,
-#fixed > h2.text-center::after {
-  content: "";
-  display: block;
-  width: 36px;
-  height: 2px;
-  margin: 0.5rem auto 0;
-  background: rgba(0, 0, 0, 0.35);
-}
-
 /* The hero still leads — make its top breathing-room match the section
    rhythm so the page reads as one piece, not hero + four boxes. */
 .home > #main {
   padding-bottom: 1.5rem;
+}
+
+/* Hero "narrowing" graphic — typeset SVG embedded below the lead. */
+.home .hero-figure {
+  max-width: 720px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.home .hero-narrowing-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.home .hero-figcaption {
+  margin-top: 0.5rem;
+  font-family: $cp-sans;
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   Indigo accent across links + buttons.
+   $cp-accent = #3b3b8c. We override Bootstrap's default link and
+   primary-button colours, keeping good contrast on both themes.
+   ============================================================ */
+
+html body a:not(.btn):not(.post-link):not(.card-title a) {
+  color: $cp-accent;
+  text-decoration-color: rgba(59, 59, 140, 0.4);
+}
+html body a:not(.btn):not(.post-link):not(.card-title a):hover {
+  color: darken(#3b3b8c, 8%);
+  text-decoration-color: $cp-accent;
+}
+
+.btn-primary,
+html body .btn-primary {
+  background-color: $cp-accent;
+  border-color: $cp-accent;
+  color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+html body .btn-primary:hover {
+  background-color: darken(#3b3b8c, 8%);
+  border-color: darken(#3b3b8c, 8%);
+  color: #fff;
+}
+
+.btn-outline-primary,
+html body .btn-outline-primary {
+  color: $cp-accent;
+  border-color: $cp-accent;
+}
+.btn-outline-primary:hover,
+html body .btn-outline-primary:hover {
+  background-color: $cp-accent;
+  border-color: $cp-accent;
+  color: #fff;
 }
 
 /* ============================================================
@@ -293,6 +337,33 @@ html[data-theme="dark"] {
   body {
     background-color: var(--background, #22272e);
     color: var(--text, #cdd9e5);
+  }
+
+  /* Indigo accents — slightly lighter for contrast on the dark surface. */
+  .section-number { color: $cp-accent-dim; }
+
+  a:not(.btn):not(.post-link):not(.card-title a) {
+    color: $cp-accent-dim;
+    text-decoration-color: rgba(138, 138, 240, 0.45);
+  }
+  a:not(.btn):not(.post-link):not(.card-title a):hover {
+    color: lighten(#5e5eb8, 12%);
+  }
+
+  .btn-primary,
+  html body .btn-primary {
+    background-color: $cp-accent-dim;
+    border-color: $cp-accent-dim;
+    color: #0d0d1c;
+  }
+  .btn-outline-primary,
+  html body .btn-outline-primary {
+    color: $cp-accent-dim;
+    border-color: $cp-accent-dim;
+  }
+  .btn-outline-primary:hover {
+    background-color: $cp-accent-dim;
+    color: #0d0d1c;
   }
 
   /* Card surfaces (Bootstrap default = #fff; theme doesn't override) */

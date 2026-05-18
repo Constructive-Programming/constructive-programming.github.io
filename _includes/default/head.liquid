@@ -1,0 +1,78 @@
+{% comment %}
+  Local override of Type-on-Strap's head.liquid.
+  Adds a proper favicon set (SVG + ICO fallback + apple-touch + og-image)
+  and otherwise mirrors the upstream head.
+{% endcomment %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode -->
+    <script>
+        const darkBtn = "{{ site.data.language.str_dark | default: "Dark" }}";
+        const lightBtn = "{{ site.data.language.str_light | default: "Light" }}";
+        const isAutoTheme = {% if site.color_theme == 'auto' %}true{% else %}false{% endif %};
+        const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (isAutoTheme) {
+            document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme') ?? preferredTheme);
+        } else {
+            document.documentElement.setAttribute('data-theme', "{{ site.color_theme | default: 'light' }}");
+        }
+    </script>
+
+    <!-- Theme JS (navbar toggle, KaTeX init, theme-toggle) -->
+    <script defer src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+
+    <!-- Local stylesheet (loaded BEFORE Bootstrap so Bootstrap defaults win
+         where Bootstrap is opinionated — we deliberately bump `html body`
+         specificity in main.scss to override the body-level Bootstrap rules
+         we don't want). -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+    <!-- Favicon set — SVG primary, ICO fallback, apple-touch for iOS. -->
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
+    <link rel="alternate icon" type="image/x-icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+
+    {% if page.bootstrap %}
+    <!-- Bootstrap 4.6.2 -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+    <!-- jQuery is required by the theme's main.min.js for the mobile nav toggle. -->
+    <script defer src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <!-- Popper + Bootstrap JS — load without the upstream-stale SRI hash,
+         which Chrome was refusing to execute anyway. We use no Bootstrap-JS
+         components on the public pages; this is here for resilience if a
+         future page adds one. -->
+    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+            crossorigin="anonymous"></script>
+    {% endif %}
+
+    <!-- KaTeX 0.16.38 -->
+    {% if site.katex or site.theme_settings.katex %}
+    <script defer src="{{ '/assets/js/vendor/katex.min.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/vendor/katex.auto-render.min.js' | relative_url }}" onload="renderMathInElement(document.body);"></script>
+    {% endif %}
+
+    <!-- Mermaid 11.13.0 -->
+    {% if site.mermaid %}
+    <script defer src="{{ '/assets/js/vendor/mermaid.min.js' | relative_url }}"></script>
+    {% endif %}
+
+    <!-- Simple-Jekyll-Search 2.1.3 -->
+    <script src="{{ '/assets/js/vendor/simple-jekyll-search.min.js' | relative_url }}" type="text/javascript"></script>
+
+    <!-- Open Graph + SEO -->
+    <meta property="og:image" content="{{ '/assets/img/og-image.png' | absolute_url }}">
+    {% unless page.layout == post %}
+    <meta property="og:type" content="website" />
+    {% endunless %}
+    {% seo %}
+</head>
