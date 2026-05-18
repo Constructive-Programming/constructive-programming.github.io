@@ -1,0 +1,26 @@
+{% comment %}
+  Local override of Type-on-Strap's tags_list.liquid.
+  Drops the Font Awesome <i class="fas fa-tag"> icon — purely decorative;
+  the "Tag(s):" prefix already labels the list.
+{% endcomment %}
+{% assign tags = include.tags | split:'|' | sort | uniq %}
+
+{% if tags.size > 0 %}
+  <div class="tag-list" data-testid="tag-list">
+    <ul>
+      {% if tags.size == 1 %}
+        <li class="meta">Tag</li>
+      {% else %}
+        <li class="meta">Tags</li>
+      {% endif %}
+
+      {% for tag in tags %}
+        <li><a class="button" data-testid="tag-link" href="{% unless 'Tags' == page.title %}{{ site.baseurl }}/tags{% endunless %}#{{ tag | cgi_escape }}">
+          <p>{{ tag }}</p>
+        </a></li>
+      {% endfor %}
+    </ul>
+  </div>
+{% else %}
+  <div class="tag-list"></div>
+{% endif %}

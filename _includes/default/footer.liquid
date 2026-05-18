@@ -2,12 +2,22 @@
     <p class="text">
         {{ site.footer_text | default: "Copyright" }} {{ site.time | date: '%Y' }}
     </p>
+
+    {% if site.legal.kvk != "" or site.legal.vat != "" or site.legal.insurance != "" %}
+    <p class="text footer-legal">
+      {%- if site.legal.entity %}{{ site.legal.entity }}{%- endif -%}
+      {%- if site.legal.kvk != "" %} · KvK {{ site.legal.kvk }}{%- endif -%}
+      {%- if site.legal.vat != "" %} · BTW {{ site.legal.vat }}{%- endif -%}
+      {%- if site.legal.insurance != "" %} · {{ site.legal.insurance }}{%- endif -%}
+    </p>
+    {% endif %}
+
     <div class="footer-icons">
         <ul>
-            <!-- Social icons from Font Awesome, if enabled -->
             {% include social/icons.liquid %}
         </ul>
     </div>
+
     {% if site.mermaid %}
         <script type="module">
           mermaid.initialize({ startOnLoad: false, theme: "default" });

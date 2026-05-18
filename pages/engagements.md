@@ -12,10 +12,29 @@ what you are buying; the actual content is shaped on the scoping call.
 If your need does not fit any of the three, the [scoping call](https://cal.constructive.dev/rhansen)
 is the right place to figure it out — there is no charge for it.
 
+## Which one is right for you
+
+- **Start with an [Architecture review](#1--architecture-review)** if you
+  have a strategic decision to make in the next quarter — a major
+  refactor, a stack pivot, a typed-FP or agent-native adoption — and you
+  want a written, defensible second opinion before you commit.
+- **Choose [Fractional advisory](#2--fractional-advisory)** if you need
+  sustained design and PR-review presence alongside your team over a
+  full quarter or more — a multi-month modernisation or methodology
+  rollout you can't pause to outsource.
+- **Choose [Embedded IC](#3--embedded-ic)** when you have a specific
+  build that needs senior delivery hands for 6–16 weeks, and the team
+  benefits from the constructive discipline rubbing off.
+
+---
+
 ## 1 · Architecture review
 
 A two-week, fixed-fee engagement that ends in a written report and a
 half-day working session with your team.
+
+Best when the question is *"are we about to spend six months on the
+wrong improvement plan?"*
 
 | | |
 |---|---|
@@ -26,12 +45,17 @@ half-day working session with your team.
 | **You receive** | A written architecture review (typically 8–15 pages) covering observed structure, the strongest two or three risks, three to five concrete narrowing moves with effort estimates, and a working session to walk through it |
 | **Pricing** | Fixed fee, quoted on the scoping call (expect ≈5 days of effort at €2,000/day) |
 
-Best when the question is *"are we about to spend six months on the wrong improvement plan?"*
+*Risk reversal: if the readout doesn't surface at least one concrete
+narrowing move worth more than the fee, we refund half. The report is
+yours to keep regardless of what you decide next.*
 
 ## 2 · Fractional advisory
 
 An ongoing relationship with your engineering leadership and a small
 working group. Two days per week, three-month minimum.
+
+Best when the question is *"how do we adopt this without breaking the
+team or our ability to ship value?"*
 
 | | |
 |---|---|
@@ -41,13 +65,14 @@ working group. Two days per week, three-month minimum.
 | **You receive** | Embedded advisory across architecture, PR review, hiring rubric, and team rituals; private Slack / Discord channel; monthly written summary for stakeholders |
 | **Pricing** | **€2,000 / day**, billed monthly (≈€16,000 / month at the 2-days/week cadence) |
 
-Best when the question is *"how do we adopt this without breaking the team or our ability to ship value?"*
-
 ## 3 · Embedded IC
 
 A full-time or 4-day/week contract where we ship features alongside
 your team, with the same constructive discipline applied to PRs as to
 architecture.
+
+Best when the question is *"can we just get someone in here who has
+done this before?"*
 
 | | |
 |---|---|
@@ -56,8 +81,6 @@ architecture.
 | **Best for** | Teams that need senior delivery on a specific build — a new optics-heavy data pipeline, a Rust subsystem, an effect-system migration — and benefit from the resulting team mentorship |
 | **You receive** | Pull requests, design docs, eval suites — shipped under your repo and your release cadence; pair sessions on demand |
 | **Pricing** | **€2,000 / day**, weekly invoicing |
-
-Best when the question is *"can we just get someone in here who has done this before?"*
 
 ## Working terms
 
