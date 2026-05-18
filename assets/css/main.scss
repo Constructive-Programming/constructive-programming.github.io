@@ -7,20 +7,13 @@
    Constructive Programming — typography pass
 
    Overrides Type-on-Strap's Source-Sans-Pro-everywhere defaults
-   with a serif body, a real monospace, a tighter measure, and
+   with a system-sans body, a real monospace, a tighter measure, and
    sharper heading hierarchy.
 
-   System font stacks — no webfont weight on the critical path.
+   System font stacks — no webfont weight on the critical path. The
+   body uses the same sans stack as the headings; hierarchy comes
+   from weight, size, and tracking, not from a serif/sans contrast.
    ============================================================ */
-
-$cp-serif:
-  "Charter",
-  "Iowan Old Style",
-  "Source Serif Pro",
-  "Apple Garamond",
-  "Palatino",
-  "Georgia",
-  serif;
 
 $cp-sans:
   -apple-system,
@@ -48,7 +41,7 @@ $cp-accent:      #3b3b8c;
 $cp-accent-dim:  #5e5eb8;   /* lighter for dark-mode + hover */
 $cp-accent-soft: rgba(59, 59, 140, 0.10);
 
-/* --- Body: serif, tighter leading, slight optical letter-spacing.
+/* --- Body: sans, tighter leading, slight optical letter-spacing.
 
    Selectors prefixed with `html` to bump specificity to 0,0,2 — Bootstrap
    loads after this stylesheet in the head, so a bare `body { ... }` rule
@@ -60,7 +53,7 @@ html .page-content,
 html p,
 html li,
 html blockquote {
-  font-family: $cp-serif;
+  font-family: $cp-sans;
   letter-spacing: -0.003em;
 }
 
@@ -94,7 +87,7 @@ h2 {
 /* --- Lead paragraph: slightly larger, lighter weight ---- */
 
 .lead {
-  font-family: $cp-serif;
+  font-family: $cp-sans;
   font-size: 1.22rem;
   font-weight: 400;
   line-height: 1.5;
@@ -107,7 +100,7 @@ code, pre, kbd, samp, tt,
 .highlight,
 pre code {
   font-family: $cp-mono;
-  font-size: 0.94em;       /* drop a hair so mono lines vertically beside serif */
+  font-size: 0.94em;       /* drop a hair so mono lines vertically beside the body sans */
 }
 
 /* --- Measure: cap prose at ~68ch on wide viewports.
@@ -157,12 +150,12 @@ pre code {
   letter-spacing: 0;
 }
 
-/* --- Library / Medium card text: keep serif body, sans titles ---- */
+/* --- Library / Medium card text: same sans as body ---- */
 
 .card-text,
 .card-subtitle small,
 .card-body small {
-  font-family: $cp-serif;
+  font-family: $cp-sans;
 }
 
 .card-title a,
@@ -260,9 +253,11 @@ pre code {
   padding-bottom: 1.5rem;
 }
 
-/* Hero "narrowing" graphic — typeset SVG embedded below the lead. */
+/* Hero "narrowing" graphic — typeset SVG embedded below the lead.
+   Wider than the prose column so the longest bar (Bar 1 = 1309 svg-units)
+   renders with text at a comfortable display size. */
 .home .hero-figure {
-  max-width: 720px;
+  max-width: 1080px;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
