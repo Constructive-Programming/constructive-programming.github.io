@@ -4474,4 +4474,47 @@ html[data-theme=dark] .site-footer .footer-icons a:hover {
   color: #5e5eb8;
 }
 
+/* ============================================================
+   Unicode-glyph fallbacks for the three FA classes the theme
+   still injects (search/tag/tags in navbar+pills, fa-adjust
+   from main.min.js theme-toggle). No FA CSS, no extra HTTP.
+   ============================================================ */
+/* ============================================================
+   Unicode-glyph fallbacks for the three FA classes that survive
+   without Font Awesome:
+   - .fa-tag / .fa-tags — emitted by tags_list.liquid and the
+     search/tag page.icon entries in navbar.liquid (we keep the
+     <i> wrapper for layout; the glyph comes from `::before`).
+   - .fa-search — page.icon on /search/ in navbar.
+   - .fa-adjust — injected at runtime by main.min.js for the
+     dark/light theme toggle. Can't reach the markup, so we
+     paint via the class it ships.
+   No Font Awesome font, no extra HTTP, ~150 bytes of CSS.
+   ============================================================ */
+.fa-tag::before,
+.fa-tags::before {
+  content: "#";
+  margin-right: 0.25em;
+  font-weight: 600;
+}
+
+.fa-search::before {
+  content: "⌕";
+  margin-right: 0.25em;
+}
+
+/* main.min.js paints fa-adjust when theme=light (label "Dark") and
+   fa-adjust.fa-rotate-180 when theme=dark (label "Light"). Half-circle
+   glyphs (◐/◑) are the most reliably-rendered theme-toggle Unicode
+   pair across system sans stacks — moon/sun (☾/☀) and crescents fall
+   back to invisible on stripped Linux font sets. */
+.fa-adjust::before {
+  content: "◐";
+  margin-right: 0.25em;
+} /* ◐ left half black */
+.fa-adjust.fa-rotate-180::before {
+  content: "◑";
+  margin-right: 0.25em;
+} /* ◑ right half black */
+
 /*# sourceMappingURL=main.css.map */
