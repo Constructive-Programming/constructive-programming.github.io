@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* TYPE_ON_STRAP Main style sheet */
 /* Variables */
 /* TYPOGRAPHY */
@@ -16843,5 +16844,161 @@ Then create your _custom.scss right next to type-on-strap.scss and add in it all
 of the unique scss that your blog needs.
 
 */
+/* ============================================================
+   Constructive Programming — typography pass
+
+   Overrides Type-on-Strap's Source-Sans-Pro-everywhere defaults
+   with a serif body, a real monospace, a tighter measure, and
+   sharper heading hierarchy.
+
+   System font stacks — no webfont weight on the critical path.
+   ============================================================ */
+/* --- Body: serif, tighter leading, slight optical letter-spacing ---- */
+body,
+.post-page,
+.page-content,
+p,
+li,
+blockquote {
+  font-family: "Charter", "Iowan Old Style", "Source Serif Pro", "Apple Garamond", "Palatino", "Georgia", serif;
+  letter-spacing: -0.003em;
+}
+
+body {
+  font-size: 1.0625rem; /* ~17px from default ~16px; agent wanted ~19 — moderate bump */
+  line-height: 1.65;
+}
+
+/* --- Headings: sans for contrast, tighter letter-spacing, heavier display ---- */
+h1, h2, h3, h4, h5, h6,
+.site-title,
+.card-title,
+.card-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h1, .display-4 {
+  font-weight: 800;
+  letter-spacing: -0.022em;
+  line-height: 1.1;
+}
+
+h2 {
+  letter-spacing: -0.018em;
+  line-height: 1.2;
+}
+
+/* --- Lead paragraph: slightly larger, lighter weight ---- */
+.lead {
+  font-family: "Charter", "Iowan Old Style", "Source Serif Pro", "Apple Garamond", "Palatino", "Georgia", serif;
+  font-size: 1.22rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.004em;
+}
+
+/* --- Monospace everywhere code shows up ---- */
+code, pre, kbd, samp, tt,
+.highlight,
+pre code {
+  font-family: "JetBrains Mono", "Cascadia Code", "Fira Code", "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+  font-size: 0.94em; /* drop a hair so mono lines vertically beside serif */
+}
+
+/* --- Measure: cap prose at ~68ch on wide viewports.
+       Applies to the main reading columns on /, /about/, /libraries/.
+       Doesn't constrain the card grids, the footer, or layout containers. ---- */
+#consulting .col-md-10,
+#consulting .col-lg-8,
+#fixed .col-md-10,
+#fixed .col-lg-8,
+.page .post-page {
+  max-width: 68ch;
+}
+
+#consulting .col-md-10 > p,
+#consulting .col-lg-8 > p,
+#consulting .col-md-10 > ul,
+#consulting .col-lg-8 > ul,
+#fixed .col-md-10 > p,
+#fixed .col-lg-8 > p {
+  /* When the parent already caps measure these are full-width within it. */
+  max-width: none;
+}
+
+/* --- Bullet rhythm in the engagement list ---- */
+#consulting ul li {
+  margin-bottom: 0.35rem;
+  line-height: 1.55;
+}
+
+#consulting ul li strong {
+  letter-spacing: -0.008em;
+}
+
+/* --- Recent-outcomes proof line: monospace numbers, justified spacing ---- */
+#consulting .text-muted small {
+  letter-spacing: 0.005em;
+}
+
+/* --- Footer: smaller, tighter ---- */
+.site-footer {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0;
+}
+
+/* --- Library / Medium card text: keep serif body, sans titles ---- */
+.card-text,
+.card-subtitle small,
+.card-body small {
+  font-family: "Charter", "Iowan Old Style", "Source Serif Pro", "Apple Garamond", "Palatino", "Georgia", serif;
+}
+
+.card-title a,
+.card-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* --- Buttons: keep sans, sharper letter-spacing ---- */
+.btn {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+/* --- Navbar items: sans, slightly heavier ---- */
+.navbar-label,
+.site-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+
+.site-title {
+  font-weight: 800;
+  letter-spacing: -0.018em;
+}
+
+/* --- Small responsive nudges (Design #9): keep card stacks comfortable ---- */
+@media (max-width: 576px) {
+  body {
+    font-size: 1rem;
+  }
+  .lead {
+    font-size: 1.1rem;
+  }
+  h1, .display-4 {
+    font-size: 2.1rem;
+    line-height: 1.15;
+  }
+  .container.my-5 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+  .card.mt-3 {
+    margin-top: 0.75rem !important;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
