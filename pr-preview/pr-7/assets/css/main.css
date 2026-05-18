@@ -16853,18 +16853,22 @@ of the unique scss that your blog needs.
 
    System font stacks — no webfont weight on the critical path.
    ============================================================ */
-/* --- Body: serif, tighter leading, slight optical letter-spacing ---- */
-body,
-.post-page,
-.page-content,
-p,
-li,
-blockquote {
+/* --- Body: serif, tighter leading, slight optical letter-spacing.
+
+   Selectors prefixed with `html` to bump specificity to 0,0,2 — Bootstrap
+   loads after this stylesheet in the head, so a bare `body { ... }` rule
+   loses the cascade tie. `html body` wins. ---- */
+html body,
+html .post-page,
+html .page-content,
+html p,
+html li,
+html blockquote {
   font-family: "Charter", "Iowan Old Style", "Source Serif Pro", "Apple Garamond", "Palatino", "Georgia", serif;
   letter-spacing: -0.003em;
 }
 
-body {
+html body {
   font-size: 1.0625rem; /* ~17px from default ~16px; agent wanted ~19 — moderate bump */
   line-height: 1.65;
 }
@@ -17106,6 +17110,15 @@ pre code {
    and a few buttons need explicit overrides for dark mode.
    ============================================================ */
 html[data-theme=dark] {
+  /* Body surface — Bootstrap 4 ships `body { background: #fff }` and the
+     theme's --background variable only applies to `<html>`. Override body
+     directly so the page background actually goes dark. */
+}
+html[data-theme=dark] body {
+  background-color: var(--background, #22272e);
+  color: var(--text, #cdd9e5);
+}
+html[data-theme=dark] {
   /* Card surfaces (Bootstrap default = #fff; theme doesn't override) */
 }
 html[data-theme=dark] .card {
@@ -17178,6 +17191,10 @@ html[data-theme=dark] #consulting .text-muted small {
    a flash of white card on a dark background. Mirrors the rules above
    under @media when no data-theme attribute is present yet. */
 @media (prefers-color-scheme: dark) {
+  html:not([data-theme]) body {
+    background-color: #22272e;
+    color: #cdd9e5;
+  }
   html:not([data-theme]) .card {
     background-color: #2d333b;
     color: #cdd9e5;
