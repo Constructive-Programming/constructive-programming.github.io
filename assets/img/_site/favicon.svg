@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Constructive Programming — narrowing mark.
+     Three horizontal bars of decreasing width: the visual of a type
+     being narrowed (e.g. String → Int → Refined[Int, 0..150]).
+     Light + dark colour-scheme aware via `currentColor`. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Constructive Programming">
+  <style>
+    .bar { fill: #3b3b8c; }
+    @media (prefers-color-scheme: dark) {
+      .bar { fill: #8a8af0; }
+    }
+  </style>
+  <rect class="bar" x="4"  y="8"  width="24" height="4" rx="1.5"/>
+  <rect class="bar" x="8"  y="14" width="16" height="4" rx="1.5"/>
+  <rect class="bar" x="12" y="20" width="8"  height="4" rx="1.5"/>
+</svg>
