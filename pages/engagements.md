@@ -24,7 +24,7 @@ half-day working session with your team.
 | **Best for** | Teams considering a major improvement plan, an architecture direction change, or a typed-FP / agent-native adoption |
 | **You provide** | Read access to the codebase, an hour with two or three principals, the strategic question we are trying to answer |
 | **You receive** | A written architecture review (typically 8–15 pages) covering observed structure, the strongest two or three risks, three to five concrete narrowing moves with effort estimates, and a working session to walk through it |
-| **Pricing** | **€10,000 fixed fee** (≈5 days of effort at €2,000/day) |
+| **Pricing** | Fixed fee, quoted on the scoping call (expect ≈5 days of effort at €2,000/day) |
 
 Best when the question is *"are we about to spend six months on the wrong improvement plan?"*
 
@@ -41,7 +41,7 @@ working group. Two days per week, three-month minimum.
 | **You receive** | Embedded advisory across architecture, PR review, hiring rubric, and team rituals; private Slack / Discord channel; monthly written summary for stakeholders |
 | **Pricing** | **€2,000 / day**, billed monthly (≈€16,000 / month at the 2-days/week cadence) |
 
-Best when the question is *"how do we adopt this without breaking the team while we ship?"*
+Best when the question is *"how do we adopt this without breaking the team or our ability to ship value?"*
 
 ## 3 · Embedded IC
 
@@ -57,7 +57,7 @@ architecture.
 | **You receive** | Pull requests, design docs, eval suites — shipped under your repo and your release cadence; pair sessions on demand |
 | **Pricing** | **€2,000 / day**, weekly invoicing |
 
-Best when the question is *"can we just get someone in here who has shipped this before?"*
+Best when the question is *"can we just get someone in here who has done this before?"*
 
 ## Working terms
 
