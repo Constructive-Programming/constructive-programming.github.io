@@ -1,7 +1,8 @@
 {% comment %}
   Local override of Type-on-Strap's tags_list.liquid.
-  Drops the Font Awesome <i class="fas fa-tag"> icon — purely decorative;
-  the "Tag(s):" prefix already labels the list.
+  Keeps the .fa-tag class on the <i> wrapper (no "fas") so the
+  Unicode-glyph rule in main.scss paints a "#" via ::before — no
+  Font Awesome font needed.
 {% endcomment %}
 {% assign tags = include.tags | split:'|' | sort | uniq %}
 
@@ -16,7 +17,7 @@
 
       {% for tag in tags %}
         <li><a class="button" data-testid="tag-link" href="{% unless 'Tags' == page.title %}{{ site.baseurl }}/tags{% endunless %}#{{ tag | cgi_escape }}">
-          <p>{{ tag }}</p>
+          <p><i class="fa-tag" aria-hidden="true"></i>{{ tag }}</p>
         </a></li>
       {% endfor %}
     </ul>

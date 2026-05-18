@@ -5,9 +5,11 @@
   - Skip pages whose URL points at the theme author.
   - Replace the Font Awesome <i class="fas fa-bars"> hamburger with
     an inline SVG (no FA dependency for the toggle).
-  - Drop the page.icon FA decoration for Search / Tags — text labels
-    only. The theme's bundled main.min.js handles the toggle via
-    vanilla JS (toggles `.hide` on the nav ul), so no jQuery needed.
+  - Keep the page.icon <i> wrapper for Search / Tags, but without
+    the "fas" class — main.scss paints the glyph via ::before using
+    Unicode (\2315 for fa-search, # for fa-tag/fa-tags). No FA font.
+  - The theme's bundled main.min.js handles the toggle via vanilla
+    JS (toggles `.hide` on the nav ul), so no jQuery needed.
 {% endcomment %}
 
 <header class="site-header">
@@ -47,7 +49,8 @@
             <li class="separator"> | </li>
             <li>
                 <a class="clear" aria-label="{{ page.title }}" title="{{ page.title }}" href="{{ page.url | relative_url }}">
-                    <span class="navbar-label">{{ page.title }}</span>
+                    {%- if page.icon -%}<i class="navbar-icon {{ page.icon }}" aria-hidden="true"></i>{%- endif -%}
+                    <span class="navbar-label{% if page.icon %} navbar-label-with-icon{% endif %}">{{ page.title }}</span>
                 </a>
             </li>
         {% endunless %}
