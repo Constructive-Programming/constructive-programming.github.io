@@ -12,7 +12,7 @@
   <div id="main" class="container text-center my-5">
     <h1 class="display-4 mb-3">Constructive Programming</h1>
     
-    <p class="lead mb-4">Type-driven engineering &amp; LLM-augmented delivery for teams that can't afford regressions.</p>
+    <p class="lead mb-4">Types as guardrails for AI agents. We ship production code paired with LLMs, narrowed by construction.</p>
     
     <p class="mb-5">
       <a href="#consulting" class="btn btn-outline-primary">What we do</a>
@@ -24,7 +24,7 @@
     </p>
     <figure class="hero-figure mx-auto" aria-hidden="false">
       <img src="/assets/img/hero-narrowing.svg"
-           alt="A type signature being narrowed: String, then Either[ParseError, Int], then Refined[Int, 0..150] — inhabitants dropping from infinity to 2³² to 151."
+           alt="A type signature being narrowed three times: String (space for bugs: ∞), Int (bugs can still hide in an Int), and a domain-specific type alias (not so much when you clearly delimit your domain values)."
            class="hero-narrowing-img">
       <figcaption class="hero-figcaption text-muted">
         <small>Narrowing: the same shape that runs through every engagement.</small>
@@ -32,11 +32,26 @@
     </figure>
   </div>
 
+  <div id="ideal-customer" class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <p class="lead text-center">
+          You're a fit if you run a platform team using a typed language
+          (C++, Rust, Scala, TypeScript) — typically Series&nbsp;B–D,
+          20–80 engineers — with a regression you can name, an improvement
+          plan you've already postponed twice, and a real interest in
+          letting LLMs accelerate the work without quietly eroding what
+          types guarantee.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div id="consulting" class="container my-5">
     <p class="section-number text-center" aria-hidden="true">01 · Consulting</p>
     <h2 class="text-center mb-3">Consulting</h2>
     <p class="lead text-center mb-4">
-      Type-driven engineering for teams that can't afford another regressive improvement plan.
+      For teams that can't afford another regressive improvement plan.
     </p>
     <div class="row justify-content-center">
       <div class="col-md-10 col-lg-8">
@@ -67,7 +82,7 @@
           output of a self-correcting development session.
         </p>
 
-        <p class="mb-2">The shapes of engagement we take on:</p>
+        <p class="mb-2">The kinds of work we take on:</p>
         <ul>
           <li><strong>Architecture and advisory</strong> — design review
             through a cardinality lens; narrowing type signatures;
@@ -87,7 +102,7 @@
 
         <p class="mt-3 mb-4">
           <small>
-            Three packaged shapes for the above —
+            Our three packaged offerings —
             <a href="/engagements/">Architecture review, Fractional advisory, Embedded IC</a>
             — with cadence, deliverables, and how a scoping call goes.
           </small>
@@ -125,45 +140,9 @@
     </div>
   </div>
 
-  <div id="fixed" class="container my-5">
-    <p class="section-number text-center" aria-hidden="true">02 · Fixed</p>
-    <h2 class="text-center mb-3">Fixed — a new functional language</h2>
-    <p class="lead text-center mb-4">
-      Program against capabilities, not data structures.
-    </p>
-    <div class="row justify-content-center">
-      <div class="col-md-10 col-lg-8">
-        <p>
-          <strong>Fixed</strong> takes everything possible from
-          <a href="https://koka-lang.github.io/koka/doc/index.html" target="_blank" rel="noopener">Koka</a> —
-          algebraic effects with evidence passing, Perceus reference counting,
-          functional-but-in-place updates — and pushes the whole language up to
-          the typeclass level. You describe what values can do (<code>cap</code>);
-          the compiler picks how to lay them out. Properties (<code>prop</code>)
-          live alongside the capabilities they govern; refinement types are
-          first-class.
-        </p>
-        <p>
-          The design draws on
-          <a href="https://en.wikipedia.org/wiki/Predicate_functor_logic" target="_blank" rel="noopener">Quine's predicate functor logic</a>
-          and Quantitative Type Theory. Phase 0 — design — is in flight,
-          with eleven example programs exercising the language. The compiler
-          (planned in Rust, targeting C) and the formal spec come next.
-        </p>
-        <p class="text-center mt-4">
-          <a href="https://github.com/Constructive-Programming/fixed"
-             class="btn btn-primary"
-             target="_blank" rel="noopener">
-            Read the design
-          </a>
-        </p>
-      </div>
-    </div>
-  </div>
-
   <div id="libraries" class="container">
-    <p class="section-number text-center" aria-hidden="true">03 · Libraries</p>
-    <h2 class="text-center mt-5 mb-3">Libraries</h2>
+    <p class="section-number text-center" aria-hidden="true">02 · Libraries</p>
+    <h2 class="text-center mt-5 mb-3">Open source contributions</h2>
     
 
 
@@ -222,12 +201,44 @@
     </p>
   </div>
 
+  <div id="fixed" class="container my-5">
+    <p class="section-number text-center" aria-hidden="true">03 · Fixed</p>
+    <h2 class="text-center mb-3">A new functional language</h2>
+    <p class="lead text-center mb-4">
+      Program against capabilities, not data structures.
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <p>
+          <strong>Fixed</strong> takes recent advances in programming language design —
+          algebraic effects with evidence passing, Perceus reference counting,
+          functional-but-in-place updates — and pushes the whole language up to
+          a capabilities level. You describe what your methods need in order to function (<code>cap</code>);
+          the compiler picks the datastructures and machine layout. Properties (<code>prop</code>)
+          live alongside the capabilities they govern; refinement types are
+          first-class.
+        </p>
+        <p>
+          The design draws on
+          <a href="https://en.wikipedia.org/wiki/Predicate_functor_logic" target="_blank" rel="noopener">Quine's predicate functor logic</a>
+          and Quantitative Type Theory. The language is still at Phase 0 — design — it is in flight,
+          with eleven example programs exercising the language. The compiler
+          (planned in Scala, targeting C) and the formal spec on their way.
+        </p>
+        <p class="text-center mt-4">
+          <a href="https://github.com/Constructive-Programming/fixed"
+             class="btn btn-primary"
+             target="_blank" rel="noopener">
+            Read the design
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div id="writing" class="container my-5">
     <p class="section-number text-center" aria-hidden="true">04 · Articles</p>
-    <h2 class="text-center mt-4 mb-3">Articles</h2>
-    <p class="text-center text-muted mb-4">
-      Long-form on type systems, optics, cardinality, and LLM-augmented engineering.
-    </p>
+    <h2 class="text-center mt-4 mb-3">Long-form on type systems, optics, cardinality, and LLM-augmented engineering.</h2>
     
 
 <div class="medium-posts bootstrap-iso">
@@ -325,6 +336,6 @@
 
     </main>
     
-    <footer class="site-footer"> <p class="text"> Copyright Constructive Programming, 2026 </p> <div class="footer-icons"> <ul> <!-- Social icons from Font Awesome, if enabled --> <li> <a feed.xml href="/feed.xml" title="Follow RSS feed" target="_blank"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fas fa-rss fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://github.com/Constructive-Programming" title="Follow on Github" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://www.linkedin.com/in/rodolfohansen" title="Follow on Linkedin" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="mailto:consulting@constructive.dev" title="Follow on Mail" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fas fa-envelope fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://medium.com/@rodolfohansen" title="Follow on Medium" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-medium fa-stack-1x fa-inverse"></i> </span> </a> </li> </ul> </div> </footer>
+    <footer class="site-footer"> <p class="text"> Copyright Constructive Programming, 2026 </p> <div class="footer-icons"> <ul> <!-- Social icons from Font Awesome, if enabled --> <li> <a href="/feed.xml" title="Follow RSS feed" target="_blank"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fas fa-rss fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://github.com/Constructive-Programming" title="Follow on Github" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-github fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://www.linkedin.com/in/rodolfohansen" title="Follow on Linkedin" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="mailto:consulting@constructive.dev" title="Follow on Mail" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fas fa-envelope fa-stack-1x fa-inverse"></i> </span> </a> </li> <li> <a href="https://medium.com/@rodolfohansen" title="Follow on Medium" target="_blank" rel="noopener"> <span class="fa-stack fa-lg"> <i class="fas fa-circle fa-stack-2x"></i> <i class="fab fa-medium fa-stack-1x fa-inverse"></i> </span> </a> </li> </ul> </div> </footer>
   </body>
 </html>
