@@ -3,7 +3,6 @@ layout: page
 title: About
 subtitle: The methodology and the team
 permalink: /about/
-feature-img: "assets/img/pexels/circuit.jpeg"
 tags: about
 ---
 
@@ -36,9 +35,11 @@ Rodolfo founded Constructive Programming and currently leads the practice.
 He's been writing software professionally for more than two decades —
 across Scala, Rust, Haskell, Kotlin, JavaScript, and a number of paradigms
 — and has been a CTO, a founder, an engineering manager, and an IC at
-nearly every team scale below "100 engineers." He is also currently
-**Director of Engineering Operations at AdTechnacity** in the Netherlands,
-where he runs the engineering organisation alongside his consulting work.
+nearly every team scale below "100 engineers." He is currently the main
+engineer behind the [cats-eo](https://eo.constructive.dev/) library and
+is designing the new research language
+[Fixed](https://github.com/Constructive-Programming/fixed), based in the
+Netherlands, where he operates this consulting firm.
 
 Earlier he was a **Global Software Quality &amp; Craftsmanship Expert at
 Royal Philips**, developing static-analysis metrics around *Total Program
@@ -86,9 +87,9 @@ Longer-form writing on these themes lives at
 #### Education
 
 - **MSc, Mathematics** — Instituto Tecnológico de Santo Domingo (INTEC),
-  2007. Real Analysis, then Topology and Category Theory pursued
+  2007\. Real Analysis, then Topology and Category Theory pursued
   independently.
-- **BSc, Computer Software Engineering** — Universidad APEC, 2004. Full
+- **BSc, Computer Software Engineering** — Universidad APEC, 2004\. Full
   scholarship from a national competition.
 
 ### More consultants — coming

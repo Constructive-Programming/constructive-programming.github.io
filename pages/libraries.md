@@ -3,7 +3,6 @@ layout: page
 title: Libraries
 subtitle: Open engineering output from the practice
 permalink: /libraries/
-feature-img: "assets/img/pexels/circuit.jpeg"
 bootstrap: true
 tags: libraries
 ---

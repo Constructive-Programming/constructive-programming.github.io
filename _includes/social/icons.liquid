@@ -1,0 +1,46 @@
+{% comment %}
+  Local override of Type-on-Strap's social/icons.liquid.
+
+  The upstream RSS link has a stray `feed.xml` boolean attribute
+  on the `<a>` tag (a typo in the theme). HTML5 parsers tolerate
+  it but it shows up in every page's footer markup; embarrassing
+  for a site whose pitch is "correct by construction." This
+  override mirrors upstream and removes the stray token.
+{% endcomment %}
+
+{% if site.data.social.rss or site.theme_settings.rss %}
+<li>
+    <a href="{{ site.data.social.feed.path | default: 'feed.xml' | relative_url }}"
+       title="{{ site.data.language.str_rss_follow | default: 'Follow RSS feed' }}"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+{% endif %}
+
+{% for footer in site.data.icons %}
+    {% unless footer[1] == nil %}
+        {% assign brand = footer[0] %}
+        {% assign id = footer[1] %}
+        {% assign data = site.data.icons_builder[brand] %}
+        {% if data.icon == nil %}
+            {% assign icon = "fab fa-" | append: brand %}
+        {% else %}
+            {% assign icon = data.icon %}
+        {% endif %}
+        <li>
+            <a href="{{ data.pre | append: id | append: data.pos }}"
+               title="{{ site.data.language.str_follow_on }} {{ brand | remove: '-' | capitalize }}"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="{{ icon }} fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    {% endunless %}
+{% endfor %}

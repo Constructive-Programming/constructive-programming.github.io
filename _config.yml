@@ -8,7 +8,7 @@ favicon: assets/img/favicon.svg
 # Hero
 header_feature_image: ""
 header_text: Constructive Programming
-header_subtitle: Type-driven engineering &amp; LLM-augmented delivery for teams that can't afford regressions.
+header_subtitle: Types as guardrails for AI agents. We ship production code paired with LLMs, narrowed by construction.
 
 # Footer
 footer_text: "Copyright Constructive Programming,"

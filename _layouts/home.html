@@ -23,12 +23,26 @@ bootstrap: true
     </p>
     <figure class="hero-figure mx-auto" aria-hidden="false">
       <img src="{{ '/assets/img/hero-narrowing.svg' | relative_url }}"
-           alt="A type signature being narrowed: String, then Either[ParseError, Int], then Refined[Int, 0..150] — inhabitants dropping from infinity to 2³² to 151."
+           alt="A type signature being narrowed three times: String (space for bugs: ∞), Int (bugs can still hide in an Int), and a domain-specific type alias (not so much when you clearly delimit your domain values)."
            class="hero-narrowing-img">
       <figcaption class="hero-figcaption text-muted">
         <small>Narrowing: the same shape that runs through every engagement.</small>
       </figcaption>
     </figure>
+  </div>
+
+  <div id="ideal-customer" class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8">
+        <p class="lead text-center">
+          You're a fit if you run a Scala or Rust platform team — typically
+          Series&nbsp;B–D, 20–80 engineers — with a regression you can name,
+          a refactor you've already postponed twice, and a real interest in
+          letting LLMs accelerate the work without quietly eroding what types
+          guarantee.
+        </p>
+      </div>
+    </div>
   </div>
 
   <div id="consulting" class="container my-5">
@@ -124,8 +138,17 @@ bootstrap: true
     </div>
   </div>
 
+  <div id="libraries" class="container">
+    <p class="section-number text-center" aria-hidden="true">02 · Libraries</p>
+    <h2 class="text-center mt-5 mb-3">Libraries</h2>
+    {% include libraries.html featured=true %}
+    <p class="text-center mt-4 mb-5">
+      <a href="{{ '/libraries/' | relative_url }}" class="btn btn-outline-primary">All libraries →</a>
+    </p>
+  </div>
+
   <div id="fixed" class="container my-5">
-    <p class="section-number text-center" aria-hidden="true">02 · Fixed</p>
+    <p class="section-number text-center" aria-hidden="true">03 · Fixed</p>
     <h2 class="text-center mb-3">Fixed — a new functional language</h2>
     <p class="lead text-center mb-4">
       Program against capabilities, not data structures.
@@ -158,15 +181,6 @@ bootstrap: true
         </p>
       </div>
     </div>
-  </div>
-
-  <div id="libraries" class="container">
-    <p class="section-number text-center" aria-hidden="true">03 · Libraries</p>
-    <h2 class="text-center mt-5 mb-3">Libraries</h2>
-    {% include libraries.html featured=true %}
-    <p class="text-center mt-4 mb-5">
-      <a href="{{ '/libraries/' | relative_url }}" class="btn btn-outline-primary">All libraries →</a>
-    </p>
   </div>
 
   <div id="writing" class="container my-5">

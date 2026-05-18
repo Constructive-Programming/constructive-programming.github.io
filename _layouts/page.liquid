@@ -19,8 +19,12 @@ layout: default
             {% if page.hide_title %}
                 <div class="feature-image-padding"></div>
             {% elsif page.subtitle and page.force_title != true %}
-                {%- comment -%} Subtitle becomes the page header. {%- endcomment -%}
-                <h2 class="subtitle subtitle-as-header">{{ page.subtitle }}</h2>
+                {%- comment -%}
+                  Subtitle becomes the page H1 — the document outline
+                  needs a top-level heading, so we promote the subtitle
+                  to <h1> rather than render it as a stranded <h2>.
+                {%- endcomment -%}
+                <h1 id="{{ page.title | default: "" | cgi_escape }}" class="title subtitle-as-header">{{ page.subtitle }}</h1>
             {% else %}
                 <h1 id="{{ page.title | default: "" | cgi_escape }}" class="title">{{ page.title }}</h1>
                 {% if page.subtitle %}

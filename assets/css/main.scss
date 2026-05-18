@@ -226,17 +226,18 @@ pre code {
   font-weight: 600;
 }
 
-/* Descending H2 sizes: Consulting is loudest, Writing is quietest. */
+/* Descending H2 sizes: 01 Consulting is loudest, 04 Articles quietest.
+   Section order: Consulting > Libraries > Fixed > Articles. */
 
 #consulting h2 { font-size: 2.45rem; }
-#fixed      h2 { font-size: 2.05rem; }
-#libraries  h2 { font-size: 1.85rem; }
+#libraries  h2 { font-size: 2.05rem; }
+#fixed      h2 { font-size: 1.85rem; }
 #writing    h2 { font-size: 1.55rem; }
 
 @media (max-width: 576px) {
   #consulting h2 { font-size: 1.85rem; }
-  #fixed      h2 { font-size: 1.6rem; }
-  #libraries  h2 { font-size: 1.45rem; }
+  #libraries  h2 { font-size: 1.6rem; }
+  #fixed      h2 { font-size: 1.45rem; }
   #writing    h2 { font-size: 1.3rem; }
 }
 
