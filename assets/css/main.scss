@@ -189,3 +189,83 @@ pre code {
   .container.my-5 { margin-top: 2rem !important; margin-bottom: 2rem !important; }
   .card.mt-3 { margin-top: 0.75rem !important; }
 }
+
+/* ============================================================
+   Section rhythm — break out of the four-identical-centred-slabs
+   pattern flagged by the design review (#5 from the synthesis).
+
+   Strategy: keep the underlying Bootstrap layout, but use a
+   decorative separator above each section, a descending H2 scale
+   so the eye knows which section is most important, and a slightly
+   narrower Fixed section so the page doesn't read as four boxes
+   of the same width.
+   ============================================================ */
+
+.home > #consulting,
+.home > #fixed,
+.home > #libraries,
+.home > #writing {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+
+/* Decorative separator above each section header. Wider, thicker
+   on the strongest section (Consulting). */
+.home > #consulting::before,
+.home > #fixed::before,
+.home > #libraries::before,
+.home > #writing::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.18), transparent);
+}
+
+.home > #consulting::before {
+  width: 160px;
+  height: 2px;
+}
+
+/* Descending H2 sizes: Consulting is loudest, Writing is quietest. */
+
+#consulting h2 { font-size: 2.45rem; }
+#fixed      h2 { font-size: 2.05rem; }
+#libraries  h2 { font-size: 1.85rem; }
+#writing    h2 { font-size: 1.55rem; }
+
+@media (max-width: 576px) {
+  #consulting h2 { font-size: 1.85rem; }
+  #fixed      h2 { font-size: 1.6rem; }
+  #libraries  h2 { font-size: 1.45rem; }
+  #writing    h2 { font-size: 1.3rem; }
+}
+
+/* Fixed section: feels different by being narrower than Consulting/Libraries. */
+@media (min-width: 768px) {
+  #fixed.container {
+    max-width: 720px;
+  }
+}
+
+/* Subtle accent under each H2: optical anchor for the gaze. */
+#consulting > h2.text-center::after,
+#fixed > h2.text-center::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 2px;
+  margin: 0.5rem auto 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* The hero still leads — make its top breathing-room match the section
+   rhythm so the page reads as one piece, not hero + four boxes. */
+.home > #main {
+  padding-bottom: 1.5rem;
+}

@@ -1,0 +1,68 @@
+{% comment %}
+  Local override of Type-on-Strap's head.liquid.
+
+  Drops the jQuery + Popper + Bootstrap-JS triplet — none of the site's
+  current pages use Bootstrap-JS components (no dropdowns, modals,
+  tooltips, popovers, collapse). The mobile nav toggle is handled by
+  the theme's own main.min.js. Keep Bootstrap *CSS* — the grid + cards
+  + utility classes are still in active use.
+
+  Also skip the dead Universal Analytics / cookie-consent script
+  constants we no longer ship.
+{% endcomment %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode -->
+    <script>
+        const darkBtn = "{{ site.data.language.str_dark | default: "Dark" }}";
+        const lightBtn = "{{ site.data.language.str_light | default: "Light" }}";
+        const isAutoTheme = {% if site.color_theme == 'auto' %}true{% else %}false{% endif %};
+        const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        if (isAutoTheme) {
+            document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme') ?? preferredTheme);
+        } else {
+            document.documentElement.setAttribute('data-theme', "{{ site.color_theme | default: 'light' }}");
+        }
+    </script>
+
+    <!-- Theme JS (navbar toggle, katex init, theme-toggle) -->
+    <script defer src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ site.favicon | relative_url }}" type="image/x-icon">
+
+    {% if page.bootstrap %}
+    <!-- Bootstrap 4.6.2 CSS only — JS bundle removed (no components in use). -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+          crossorigin="anonymous">
+    {% endif %}
+
+    <!-- KaTeX 0.16.38 -->
+    {% if site.katex or site.theme_settings.katex %}
+    <script defer src="{{ '/assets/js/vendor/katex.min.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/vendor/katex.auto-render.min.js' | relative_url }}" onload="renderMathInElement(document.body);"></script>
+    {% endif %}
+
+    <!-- Mermaid 11.13.0 -->
+    {% if site.mermaid %}
+    <script defer src="{{ '/assets/js/vendor/mermaid.min.js' | relative_url }}"></script>
+    {% endif %}
+
+    <!-- Simple-Jekyll-Search 2.1.3 (search page only relies on this) -->
+    <script src="{{ '/assets/js/vendor/simple-jekyll-search.min.js' | relative_url }}" type="text/javascript"></script>
+
+    <!-- seo tags -->
+    <meta property="og:image" content="{{ '/' | absolute_url }}{% if page.thumbnail %}{{ page.thumbnail }}{% else %}{{ page.feature-img | default: site.header_feature_image }}{% endif %}">
+    {% unless page.layout == post %}
+    <meta property="og:type" content="website" />
+    {% endunless %}
+    {% seo %}
+</head>
