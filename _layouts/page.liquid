@@ -1,0 +1,45 @@
+---
+layout: default
+---
+{% comment %}
+  Local override of Type-on-Strap's page layout.
+
+  Drops the redundant H1 title when a page already has a subtitle — the
+  visitor just clicked the nav item carrying the title, repeating it is
+  noise. Subtitle becomes the page header. If a page has no subtitle,
+  the title still renders so the page isn't headerless.
+
+  Pages can also force the title to render by setting `force_title: true`
+  in front matter; pages can hide both by setting `hide_title: true`,
+  matching upstream behaviour.
+{% endcomment %}
+<article {% if page.feature-img %}class="feature-image"{% endif %}>
+    <header id="main" style="background-image: url('{{ page.feature-img | relative_url }}')">
+        <div class="title-padder">
+            {% if page.hide_title %}
+                <div class="feature-image-padding"></div>
+            {% elsif page.subtitle and page.force_title != true %}
+                {%- comment -%} Subtitle becomes the page header. {%- endcomment -%}
+                <h2 class="subtitle subtitle-as-header">{{ page.subtitle }}</h2>
+            {% else %}
+                <h1 id="{{ page.title | default: "" | cgi_escape }}" class="title">{{ page.title }}</h1>
+                {% if page.subtitle %}
+                    <h2 class="subtitle">{{ page.subtitle }}</h2>
+                {% endif %}
+            {% endif %}
+        </div>
+    </header>
+    <section class="post-content">
+        {{ content }}
+    </section>
+    <!-- Category and Tag list -->
+    <div class="tag-category-container">
+        <!-- Category list -->
+        {% capture category_list %}{{ page.categories | join: "|" }}{% endcapture %}
+        {% include default/category_list.liquid categories=category_list %}
+
+        <!-- Tag list for portfolio -->
+        {% capture tag_list %}{{ page.tags | join: "|" }}{% endcapture %}
+        {% include default/tags_list.liquid tags=tag_list %}
+    </div>
+</article>
